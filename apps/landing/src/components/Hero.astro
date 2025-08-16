@@ -1,0 +1,370 @@
+<section
+  class="hero min-h-screen bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 relative overflow-hidden"
+>
+  <!-- Elementos de fondo animados -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div
+      class="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full filter blur-3xl animate-float"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full filter blur-3xl animate-float-slow"
+    >
+    </div>
+    <div
+      class="absolute top-1/2 left-1/2 w-80 h-80 bg-accent/20 rounded-full filter blur-3xl animate-pulse-glow transform -translate-x-1/2 -translate-y-1/2"
+    >
+    </div>
+  </div>
+
+  <!-- Navbar con DaisyUI -->
+  <div
+    class="navbar bg-base-100/90 backdrop-blur-lg fixed top-0 z-40 shadow-xl border-b border-base-300"
+  >
+    <div class="navbar-start">
+      <div class="dropdown">
+        <label tabindex="0" class="btn btn-ghost btn-circle lg:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h8m-8 6h16"></path>
+          </svg>
+        </label>
+        <ul
+          tabindex="0"
+          class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-2xl bg-base-100 rounded-box w-52 border border-base-300"
+        >
+          <li>
+            <a
+              href="#features"
+              class="text-lg hover:bg-primary hover:text-primary-content"
+              >🎯 Características</a
+            >
+          </li>
+          <li>
+            <a
+              href="#games"
+              class="text-lg hover:bg-primary hover:text-primary-content"
+              >🎮 Juegos</a
+            >
+          </li>
+          <li>
+            <a
+              href="#impact"
+              class="text-lg hover:bg-primary hover:text-primary-content"
+              >📊 Impacto</a
+            >
+          </li>
+          <li>
+            <a
+              href="#testimonials"
+              class="text-lg hover:bg-primary hover:text-primary-content"
+              >💬 Testimonios</a
+            >
+          </li>
+        </ul>
+      </div>
+      <a
+        class="btn btn-ghost gap-2 normal-case text-xl font-bold hover:scale-105 transition-transform"
+      >
+        <div class="avatar">
+          <div
+            class="w-10 rounded-xl bg-gradient-to-br from-primary to-secondary p-2"
+          >
+            <svg
+              class="w-full h-full text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <span
+          class="hidden sm:inline bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-space"
+          >Cognitive PlayKit</span
+        >
+      </a>
+    </div>
+
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 gap-2">
+        <li>
+          <a href="#features" class="btn btn-ghost rounded-full"
+            >Características</a
+          >
+        </li>
+        <li>
+          <a href="#games" class="btn btn-ghost rounded-full">Juegos</a>
+        </li>
+        <li>
+          <a href="#impact" class="btn btn-ghost rounded-full">Impacto</a>
+        </li>
+        <li>
+          <a href="#testimonials" class="btn btn-ghost rounded-full"
+            >Testimonios</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="navbar-end gap-2">
+      <div class="tooltip tooltip-bottom" data-tip="Cambiar tema">
+        <button
+          class="btn btn-ghost btn-circle"
+          onclick="document.getElementById('theme-modal').showModal()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <button
+        class="btn btn-primary rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all gap-2"
+      >
+        <span class="hidden sm:inline">Acceder Demo</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="hero-content text-center relative z-10 pt-32 px-4">
+    <div class="max-w-6xl">
+      <!-- Badges animados -->
+      <div
+        class="flex flex-wrap justify-center gap-3 mb-8"
+        data-aos="fade-down"
+      >
+        <div
+          class="badge badge-primary badge-lg gap-2 p-5 animate-bounce-in shadow-lg"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          Validado Científicamente
+        </div>
+        <div
+          class="badge badge-secondary badge-lg gap-2 p-5 animate-bounce-in shadow-lg"
+          style="animation-delay: 0.1s"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+          +500K Niños
+        </div>
+        <div
+          class="badge badge-accent badge-lg gap-2 p-5 animate-bounce-in shadow-lg"
+          style="animation-delay: 0.2s"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          15 min/día
+        </div>
+      </div>
+
+      <!-- Título principal -->
+      <h1
+        class="text-5xl md:text-7xl font-bold mb-8 font-lexend"
+        data-aos="fade-up"
+      >
+        <span class="text-gradient-rainbow block mb-2">Cada Niño Merece</span>
+        <span class="text-base-content">Alcanzar Sus Sueños</span>
+      </h1>
+
+      <p
+        class="text-xl md:text-2xl mb-10 text-base-content/80 max-w-3xl mx-auto leading-relaxed"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        Plataforma educativa basada en <span class="font-semibold text-primary"
+          >neurociencia</span
+        > que detecta, evalúa y entrena habilidades cognitivas en niños con dislexia
+        mediante <span class="font-semibold text-secondary"
+          >juegos adaptativos</span
+        >
+      </p>
+
+      <!-- CTA Buttons -->
+      <div
+        class="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+      >
+        <button
+          class="btn btn-primary btn-lg rounded-full shadow-xl hover:shadow-2xl hover-lift group gap-2"
+        >
+          <span>Evaluación Gratuita</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 group-hover:translate-x-1 transition"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </button>
+
+        <button
+          class="btn btn-outline btn-secondary btn-lg rounded-full hover-lift group gap-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+            ></path>
+          </svg>
+          <span>Ver Demo</span>
+        </button>
+      </div>
+
+      <!-- Stats con DaisyUI mejorado -->
+      <div
+        class="stats stats-vertical lg:stats-horizontal shadow-2xl bg-base-100/90 backdrop-blur-lg"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        <div class="stat hover:bg-primary/10 transition-colors">
+          <div class="stat-figure text-primary text-4xl animate-float">👦</div>
+          <div class="stat-title text-base-content/60">Niños Activos</div>
+          <div class="stat-value text-primary">500K+</div>
+          <div class="stat-desc text-success">↗︎ 40% este año</div>
+        </div>
+
+        <div class="stat hover:bg-secondary/10 transition-colors">
+          <div
+            class="stat-figure text-secondary text-4xl animate-float"
+            style="animation-delay: 0.5s"
+          >
+            📈
+          </div>
+          <div class="stat-title text-base-content/60">Mejora Promedio</div>
+          <div class="stat-value text-secondary">87%</div>
+          <div class="stat-desc text-success">En 3 meses</div>
+        </div>
+
+        <div class="stat hover:bg-accent/10 transition-colors">
+          <div
+            class="stat-figure text-accent text-4xl animate-float"
+            style="animation-delay: 1s"
+          >
+            🎮
+          </div>
+          <div class="stat-title text-base-content/60">Sesiones</div>
+          <div class="stat-value text-accent">42M+</div>
+          <div class="stat-desc text-success">15 min promedio</div>
+        </div>
+
+        <div class="stat hover:bg-info/10 transition-colors">
+          <div
+            class="stat-figure text-info text-4xl animate-float"
+            style="animation-delay: 1.5s"
+          >
+            🌍
+          </div>
+          <div class="stat-title text-base-content/60">Países</div>
+          <div class="stat-value text-info">28</div>
+          <div class="stat-desc text-success">4 continentes</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Indicador de scroll -->
+  <div
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+  >
+    <div class="tooltip tooltip-top" data-tip="Desliza para más">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-8 w-8 text-base-content/50"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </div>
+</section>

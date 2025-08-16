@@ -1,0 +1,60 @@
+{
+  "name": "cognitive-playkit",
+  "version": "1.0.0",
+  "description": "Plataforma educativa para dislexia - Change Dyslexia Demo Project",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "setup": "npm install && npm run install:all",
+    "install:all": "npm run install:landing && npm run install:dashboard && npm run install:games",
+    "install:landing": "cd apps/landing && npm install",
+    "install:dashboard": "cd apps/dashboard && npm install",
+    "install:games": "cd apps/games/phaser-games && npm install",
+    "dev": "concurrently \"npm run dev:landing\" \"npm run dev:dashboard\" \"npm run dev:api\"",
+    "dev:landing": "cd apps/landing && npm run dev",
+    "dev:dashboard": "cd apps/dashboard && ng serve --port 4201",
+    "dev:api": "cd apps/api && symfony serve --port=8000",
+    "dev:games": "cd apps/games/phaser-games && npm run dev",
+    "build": "npm run build:landing && npm run build:dashboard",
+    "build:landing": "cd apps/landing && npm run build",
+    "build:dashboard": "cd apps/dashboard && npm run build --prod",
+    "test": "npm run test:dashboard",
+    "test:dashboard": "cd apps/dashboard && ng test",
+    "lint": "npm run lint:dashboard && npm run lint:landing",
+    "lint:dashboard": "cd apps/dashboard && ng lint",
+    "lint:landing": "cd apps/landing && npm run lint",
+    "clean": "rm -rf apps/*/node_modules packages/*/node_modules node_modules"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.45.0",
+    "prettier": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/albertoguinda/cognitive-playkit.git"
+  },
+  "keywords": [
+    "dislexia",
+    "educacion", 
+    "angular",
+    "symfony",
+    "phaser",
+    "unity",
+    "capacitor",
+    "tailwind",
+    "change-dyslexia"
+  ],
+  "author": "Alberto Guinda",
+  "license": "MIT"
+}

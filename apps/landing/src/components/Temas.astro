@@ -1,0 +1,51 @@
+<dialog id="theme-modal" class="modal">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg mb-4">Personaliza tu experiencia</h3>
+    <div class="grid grid-cols-2 gap-4">
+      <button class="btn btn-outline" onclick="changeTheme('cognitive')"
+        >🎨 Cognitive</button
+      >
+      <button class="btn btn-outline" onclick="changeTheme('dyslexia')"
+        >👁️ Dislexia</button
+      >
+      <button class="btn btn-outline" onclick="changeTheme('light')"
+        >☀️ Claro</button
+      >
+      <button class="btn btn-outline" onclick="changeTheme('dark')"
+        >🌙 Oscuro</button
+      >
+      <button class="btn btn-outline" onclick="changeTheme('cupcake')"
+        >🧁 Cupcake</button
+      >
+      <button class="btn btn-outline" onclick="changeTheme('cyberpunk')"
+        >🤖 Cyberpunk</button
+      >
+    </div>
+    <div class="divider">Accesibilidad</div>
+    <div class="space-y-3">
+      <button
+        class="btn btn-block btn-outline"
+        onclick="document.body.classList.toggle('font-opendyslexic')"
+      >
+        🔤 Fuente OpenDyslexic
+      </button>
+      <button
+        class="btn btn-block btn-outline"
+        onclick="document.body.classList.toggle('high-contrast')"
+      >
+        🔆 Alto Contraste
+      </button>
+      <button
+        class="btn btn-block btn-outline"
+        onclick="document.body.classList.toggle('large-text')"
+      >
+        🔍 Texto Grande
+      </button>
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">Cerrar</button>
+      </form>
+    </div>
+  </div>
+</dialog>

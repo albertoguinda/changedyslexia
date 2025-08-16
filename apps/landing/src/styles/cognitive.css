@@ -1,0 +1,550 @@
+/* cognitive.css - Sistema de diseño para Cognitive PlayKit */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=OpenDyslexic:wght@400;700&display=swap');
+
+/* Variables CSS personalizadas para temas de accesibilidad */
+:root {
+  --dyslexia-spacing: 1.5;
+  --dyslexia-line-height: 1.8;
+  --animation-speed: 1;
+  --focus-ring-color: #8b5cf6;
+  --hover-scale: 1.05;
+  --primary-color: #8b5cf6;
+  --secondary-color: #06b6d4;
+  --accent-color: #10b981;
+}
+
+/* Tema de alto contraste para dislexia */
+[data-theme="dyslexia"] {
+  --dyslexia-spacing: 2;
+  --dyslexia-line-height: 2.2;
+  letter-spacing: 0.12em;
+  word-spacing: 0.16em;
+}
+
+/* Animaciones premium suaves */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg) scale(1); 
+  }
+  33% { 
+    transform: translateY(-20px) rotate(1deg) scale(1.02); 
+  }
+  66% { 
+    transform: translateY(-10px) rotate(-1deg) scale(1.01); 
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5),
+                0 0 40px rgba(139, 92, 246, 0.3),
+                0 0 60px rgba(139, 92, 246, 0.1);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.8),
+                0 0 60px rgba(139, 92, 246, 0.5),
+                0 0 80px rgba(139, 92, 246, 0.3);
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes gradient-y {
+  0%, 100% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
+}
+
+@keyframes morph {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+
+@keyframes slide-in-left {
+  from { 
+    transform: translateX(-100px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes slide-in-right {
+  from { 
+    transform: translateX(100px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes slide-in-up {
+  from { 
+    transform: translateY(100px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes reveal-text {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes bounce-in {
+  0% { 
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% { 
+    transform: scale(1.05);
+  }
+  70% { 
+    transform: scale(0.9);
+  }
+  100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Clases de utilidad para animaciones */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 6s ease-in-out 2s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 15s ease infinite;
+}
+
+.animate-gradient-y {
+  background-size: 200% 200%;
+  animation: gradient-y 15s ease infinite;
+}
+
+.animate-morph {
+  animation: morph 8s ease-in-out infinite;
+}
+
+.animate-slide-left {
+  animation: slide-in-left 0.5s ease-out;
+}
+
+.animate-slide-right {
+  animation: slide-in-right 0.5s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-in-up 0.5s ease-out;
+}
+
+.animate-reveal {
+  animation: reveal-text 1s ease-out forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255,255,255,0.3) 50%, 
+    transparent 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s ease-out;
+}
+
+/* Efectos hover avanzados */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
+}
+
+.hover-rotate:hover {
+  transform: rotate(5deg) scale(1.1);
+}
+
+/* Glassmorphism mejorado */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Efectos de texto */
+.text-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-rainbow {
+  background: linear-gradient(
+    90deg,
+    #ff0080,
+    #ff8c00,
+    #40e0d0,
+    #8a2be2,
+    #ff0080
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-x 3s linear infinite;
+}
+
+.text-shadow-glow {
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.5),
+               0 0 40px rgba(139, 92, 246, 0.3),
+               0 0 60px rgba(139, 92, 246, 0.2);
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* Cursor personalizado */
+.cursor-magic {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" fill="%23667eea" opacity="0.5"/><circle cx="16" cy="16" r="5" fill="%23764ba2"/></svg>'), auto;
+}
+
+/* Parallax layers */
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.parallax-bg {
+  transform: translateZ(-2px) scale(3);
+}
+
+.parallax-mid {
+  transform: translateZ(-1px) scale(2);
+}
+
+.parallax-front {
+  transform: translateZ(0);
+}
+
+/* Neumorphism */
+.neumorphic {
+  background: linear-gradient(145deg, #f0f0f3, #cacace);
+  box-shadow: 20px 20px 60px #bebebe,
+              -20px -20px 60px #ffffff;
+}
+
+.neumorphic-pressed {
+  background: linear-gradient(145deg, #cacace, #f0f0f3);
+  box-shadow: inset 20px 20px 60px #bebebe,
+              inset -20px -20px 60px #ffffff;
+}
+
+/* Cards 3D */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card-3d:hover {
+  transform: rotateY(10deg) rotateX(10deg);
+}
+
+.card-3d-front,
+.card-3d-back {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card-3d-back {
+  transform: rotateY(180deg);
+}
+
+/* Loading animations */
+.loader-dots span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #667eea;
+  margin: 0 4px;
+  animation: loader-dots 1.4s infinite ease-in-out both;
+}
+
+.loader-dots span:nth-child(1) { animation-delay: -0.32s; }
+.loader-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes loader-dots {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Skeleton loading */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(139, 92, 246, 0.1) 25%,
+    rgba(139, 92, 246, 0.2) 50%,
+    rgba(139, 92, 246, 0.1) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Mejoras de accesibilidad */
+.focus-visible-ring:focus-visible {
+  outline: 3px solid var(--focus-ring-color);
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+/* Modo oscuro mejorado */
+@media (prefers-color-scheme: dark) {
+  .glass {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Responsive text sizing */
+.text-responsive {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.heading-responsive {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-break {
+    page-break-after: always;
+  }
+}
+
+/* Accessibility utilities */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Custom DaisyUI theme overrides */
+[data-theme="cognitive"] {
+  --p: 259 94% 51%;
+  --pf: 259 94% 41%;
+  --pc: 0 0% 100%;
+  --s: 314 100% 47%;
+  --sf: 314 100% 37%;
+  --sc: 0 0% 100%;
+  --a: 174 60% 51%;
+  --af: 174 60% 41%;
+  --ac: 0 0% 100%;
+  --n: 219 14% 28%;
+  --nf: 219 14% 18%;
+  --nc: 0 0% 100%;
+  --b1: 0 0% 100%;
+  --b2: 210 20% 98%;
+  --b3: 216 12% 92%;
+  --bc: 215 28% 17%;
+  --in: 207 90% 54%;
+  --su: 174 100% 29%;
+  --wa: 36 100% 50%;
+  --er: 14 100% 57%;
+  --rounded-box: 1rem;
+  --rounded-btn: 9999px;
+  --rounded-badge: 9999px;
+  --animation-btn: 0.3s;
+  --animation-input: 0.2s;
+  --btn-text-case: none;
+  --btn-focus-scale: 0.98;
+  --border-btn: 2px;
+  --tab-border: 2px;
+  --tab-radius: 0.7rem;
+}
+
+/* Fuente OpenDyslexic */
+.font-opendyslexic,
+.font-opendyslexic * {
+  font-family: 'OpenDyslexic', sans-serif !important;
+}
+
+/* Alto contraste */
+.high-contrast {
+  filter: contrast(1.5) brightness(1.1);
+}
+
+.high-contrast .text-base-content {
+  color: #000000 !important;
+}
+
+.high-contrast .bg-base-100 {
+  background-color: #ffffff !important;
+}
+
+/* Texto grande */
+.large-text {
+  font-size: 1.2em !important;
+}
+
+.large-text .text-lg { 
+  font-size: 1.4em !important; 
+}
+
+.large-text .text-xl { 
+  font-size: 1.6em !important; 
+}
+
+.large-text .text-2xl { 
+  font-size: 1.8em !important; 
+}
+
+.large-text .text-3xl { 
+  font-size: 2.2em !important; 
+}
+
+.large-text .text-4xl { 
+  font-size: 2.8em !important; 
+}
+
+.large-text .text-5xl { 
+  font-size: 3.4em !important; 
+}
+
+/* Mejoras de focus para lectores de pantalla */
+.focus-visible-ring:focus-visible {
+  outline: 3px solid var(--focus-ring-color);
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+/* Animaciones más suaves para usuarios sensibles */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mejoras de accesibilidad para elementos interactivos */
+.btn:focus-visible,
+.card:focus-visible,
+a:focus-visible {
+  transform: scale(1.02);
+  z-index: 10;
+}
+
+/* Espaciado mejorado para dislexia */
+.dyslexia-spacing p,
+.dyslexia-spacing li {
+  line-height: var(--dyslexia-line-height);
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
+}
+
+/* Mejores contrastes para elementos importantes */
+.btn-primary {
+  background: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+  background: color-mix(in srgb, var(--primary-color) 80%, black);
+  border-color: color-mix(in srgb, var(--primary-color) 80%, black);
+}

@@ -1,0 +1,149 @@
+---
+// apps/landing/src/layouts/Layout.astro
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Cognitive PlayKit - Plataforma educativa gamificada para detección y entrenamiento de habilidades cognitivas en dislexia. Demo técnico para Change Dyslexia."
+    />
+    <meta
+      name="keywords"
+      content="dislexia, educación, juegos educativos, angular, symfony, phaser, unity, capacitor, tailwind, change dyslexia"
+    />
+    <meta name="author" content="Alberto Guinda" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fuentes optimizadas para dislexia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Open Graph / Meta Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cognitive-playkit.vercel.app/" />
+    <meta
+      property="og:title"
+      content="Cognitive PlayKit - Plataforma Educativa para Dislexia"
+    />
+    <meta
+      property="og:description"
+      content="Demo técnico completo: Angular + Symfony + Phaser + Unity + Capacitor para Change Dyslexia"
+    />
+    <meta
+      property="og:image"
+      content="https://cognitive-playkit.vercel.app/og-image.png"
+    />
+
+    <title>{title}</title>
+
+    <!-- Importar estilos personalizados -->
+    <link rel="stylesheet" href="/src/styles/cognitive.css" />
+
+    <style>
+      /* Mejoras específicas para dislexia */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        line-height: 1.6;
+        letter-spacing: 0.02em;
+      }
+
+      /* Alto contraste mejorado */
+      .high-contrast {
+        filter: contrast(1.2);
+      }
+
+      /* Espaciado mejorado para lectura */
+      p,
+      li {
+        line-height: 1.8;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Animaciones suaves */
+      .fade-in {
+        animation: fadeIn 0.6s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Focus mejorado para accesibilidad */
+      *:focus {
+        outline: 2px solid #4a90e2;
+        outline-offset: 2px;
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-base-100 text-base-content high-contrast">
+    <slot />
+
+    <script>
+      // Mejorar navegación con teclado
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Tab") {
+          document.body.classList.add("keyboard-navigation");
+        }
+      });
+
+      // Smooth scroll para navegación
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Lazy loading de imágenes
+      if ("IntersectionObserver" in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("fade-in");
+            }
+          });
+        });
+
+        document.querySelectorAll(".card, .hero-content").forEach((img) => {
+          imageObserver.observe(img);
+        });
+      }
+    </script>
+  </body>
+</html>
