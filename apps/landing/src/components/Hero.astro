@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <!-- Navbar con DaisyUI -->
+  <!-- Navbar -->
   <div
     class="navbar bg-base-100/90 backdrop-blur-lg fixed top-0 z-40 shadow-xl border-b border-base-300"
   >
@@ -96,8 +96,9 @@
         </div>
         <span
           class="hidden sm:inline bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-space"
-          >Cognitive PlayKit</span
         >
+          Cognitive PlayKit
+        </span>
       </a>
     </div>
 
@@ -108,9 +109,7 @@
             >Características</a
           >
         </li>
-        <li>
-          <a href="#games" class="btn btn-ghost rounded-full">Juegos</a>
-        </li>
+        <li><a href="#games" class="btn btn-ghost rounded-full">Juegos</a></li>
         <li>
           <a href="#impact" class="btn btn-ghost rounded-full">Impacto</a>
         </li>
@@ -123,28 +122,26 @@
     </div>
 
     <div class="navbar-end gap-2">
-      <div class="tooltip tooltip-bottom" data-tip="Cambiar tema">
-        <button
-          class="btn btn-ghost btn-circle"
-          onclick="document.getElementById('theme-modal').showModal()"
+      <!-- Botón de tema -->
+      <button class="btn btn-ghost btn-circle" onclick="toggleTheme()">
+        <svg
+          id="theme-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <button
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+          ></path>
+        </svg>
+      </button>
+      <a
+        href="#cta"
         class="btn btn-primary rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all gap-2"
       >
         <span class="hidden sm:inline">Acceder Demo</span>
@@ -161,187 +158,89 @@
             stroke-width="2"
             d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
         </svg>
-      </button>
+      </a>
     </div>
   </div>
 
   <!-- Hero Content -->
   <div class="hero-content text-center relative z-10 pt-32 px-4">
     <div class="max-w-6xl">
-      <!-- Badges animados -->
-      <div
-        class="flex flex-wrap justify-center gap-3 mb-8"
-        data-aos="fade-down"
-      >
+      <!-- Badges -->
+      <div class="flex flex-wrap justify-center gap-3 mb-8">
         <div
           class="badge badge-primary badge-lg gap-2 p-5 animate-bounce-in shadow-lg"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
-          Validado Científicamente
+          🎯 Diseñado para Dislexia
         </div>
         <div
           class="badge badge-secondary badge-lg gap-2 p-5 animate-bounce-in shadow-lg"
-          style="animation-delay: 0.1s"
+          style="animation-delay:0.1s"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
-          +500K Niños
-        </div>
-        <div
-          class="badge badge-accent badge-lg gap-2 p-5 animate-bounce-in shadow-lg"
-          style="animation-delay: 0.2s"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
-          15 min/día
+          🎮 Juegos Adaptativos
         </div>
       </div>
 
       <!-- Título principal -->
-      <h1
-        class="text-5xl md:text-7xl font-bold mb-8 font-lexend"
-        data-aos="fade-up"
-      >
-        <span class="text-gradient-rainbow block mb-2">Cada Niño Merece</span>
-        <span class="text-base-content">Alcanzar Sus Sueños</span>
+      <h1 class="text-5xl md:text-7xl font-bold mb-8 font-lexend">
+        <span class="text-gradient-rainbow block mb-2">Aprender Jugando</span>
+        <span class="text-base-content">Tecnología Inclusiva</span>
       </h1>
 
       <p
         class="text-xl md:text-2xl mb-10 text-base-content/80 max-w-3xl mx-auto leading-relaxed"
-        data-aos="fade-up"
-        data-aos-delay="100"
       >
-        Plataforma educativa basada en <span class="font-semibold text-primary"
-          >neurociencia</span
-        > que detecta, evalúa y entrena habilidades cognitivas en niños con dislexia
-        mediante <span class="font-semibold text-secondary"
-          >juegos adaptativos</span
-        >
+        Cognitive PlayKit combina <span class="font-semibold text-primary"
+          >juegos</span
+        >,
+        <span class="font-semibold text-secondary">datos</span> y
+        <span class="font-semibold text-accent">accesibilidad</span>
+        para apoyar a niños con dislexia.
       </p>
 
       <!-- CTA Buttons -->
-      <div
-        class="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-        data-aos="zoom-in"
-        data-aos-delay="200"
-      >
-        <button
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <a
+          href="#games"
           class="btn btn-primary btn-lg rounded-full shadow-xl hover:shadow-2xl hover-lift group gap-2"
         >
-          <span>Evaluación Gratuita</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 group-hover:translate-x-1 transition"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-          </svg>
-        </button>
-
-        <button
+          Explorar Juegos
+        </a>
+        <a
+          href="#features"
           class="btn btn-outline btn-secondary btn-lg rounded-full hover-lift group gap-2"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-            ></path>
-          </svg>
-          <span>Ver Demo</span>
-        </button>
+          Ver Dashboard
+        </a>
       </div>
 
-      <!-- Stats con DaisyUI mejorado -->
+      <!-- Stats -->
       <div
         class="stats stats-vertical lg:stats-horizontal shadow-2xl bg-base-100/90 backdrop-blur-lg"
-        data-aos="fade-up"
-        data-aos-delay="300"
       >
         <div class="stat hover:bg-primary/10 transition-colors">
           <div class="stat-figure text-primary text-4xl animate-float">👦</div>
-          <div class="stat-title text-base-content/60">Niños Activos</div>
+          <div class="stat-title text-base-content/60">Niños apoyados</div>
           <div class="stat-value text-primary">500K+</div>
-          <div class="stat-desc text-success">↗︎ 40% este año</div>
         </div>
-
         <div class="stat hover:bg-secondary/10 transition-colors">
           <div
             class="stat-figure text-secondary text-4xl animate-float"
-            style="animation-delay: 0.5s"
+            style="animation-delay:0.5s"
           >
             📈
           </div>
-          <div class="stat-title text-base-content/60">Mejora Promedio</div>
+          <div class="stat-title text-base-content/60">Mejora promedio</div>
           <div class="stat-value text-secondary">87%</div>
-          <div class="stat-desc text-success">En 3 meses</div>
         </div>
-
         <div class="stat hover:bg-accent/10 transition-colors">
           <div
             class="stat-figure text-accent text-4xl animate-float"
-            style="animation-delay: 1s"
-          >
-            🎮
-          </div>
-          <div class="stat-title text-base-content/60">Sesiones</div>
-          <div class="stat-value text-accent">42M+</div>
-          <div class="stat-desc text-success">15 min promedio</div>
-        </div>
-
-        <div class="stat hover:bg-info/10 transition-colors">
-          <div
-            class="stat-figure text-info text-4xl animate-float"
-            style="animation-delay: 1.5s"
+            style="animation-delay:1s"
           >
             🌍
           </div>
           <div class="stat-title text-base-content/60">Países</div>
-          <div class="stat-value text-info">28</div>
-          <div class="stat-desc text-success">4 continentes</div>
+          <div class="stat-value text-accent">28</div>
         </div>
       </div>
     </div>

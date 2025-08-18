@@ -1,232 +1,595 @@
 <section
   id="testimonials"
-  class="py-20 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5"
+  class="py-20 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 relative overflow-hidden"
 >
-  <div class="container mx-auto px-4">
+  <!-- Elementos de fondo animados -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div
+      class="absolute top-32 left-16 w-64 h-64 bg-primary/10 rounded-full filter blur-3xl animate-float"
+    >
+    </div>
+    <div
+      class="absolute bottom-32 right-16 w-80 h-80 bg-secondary/10 rounded-full filter blur-3xl animate-float-slow"
+    >
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <!-- Header mejorado -->
     <div class="text-center mb-16">
-      <div class="badge badge-outline badge-lg mb-4" data-aos="fade-down">
-        TESTIMONIOS
+      <div class="flex justify-center items-center gap-3 mb-6">
+        <div
+          class="badge badge-success badge-lg gap-2 p-4 shadow-lg animate-bounce-in"
+        >
+          💬 TESTIMONIOS REALES
+        </div>
+        <div
+          class="badge badge-warning badge-lg gap-2 p-4 shadow-lg animate-bounce-in"
+          style="animation-delay: 0.1s"
+        >
+          ⭐ VERIFICADOS
+        </div>
       </div>
-      <h2
-        class="text-4xl md:text-5xl font-bold mb-4 font-lexend"
-        data-aos="fade-up"
-      >
-        <span class="text-gradient">Historias de Éxito</span>
+
+      <h2 class="text-4xl md:text-6xl font-bold mb-6 font-lexend">
+        <span class="text-gradient-rainbow">Historias que Inspiran</span>
+        <br />
+        <span class="text-base-content">Voces de Nuestra Comunidad</span>
       </h2>
+
       <p
-        class="text-xl text-base-content/70 max-w-3xl mx-auto"
-        data-aos="fade-up"
-        data-aos-delay="100"
+        class="text-xl md:text-2xl text-base-content/80 max-w-4xl mx-auto leading-relaxed"
       >
-        Lo que dicen padres, educadores y profesionales
+        Descubre cómo <span class="font-semibold text-primary"
+          >Cognitive PlayKit</span
+        >
+        está transformando la vida de niños, familias y profesionales
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Testimonial 1 -->
-      <div class="card bg-base-100 shadow-xl hover-lift" data-aos="fade-up">
-        <div class="card-body">
-          <div class="flex items-center mb-4">
+    <!-- Stats de testimonios -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 max-w-3xl mx-auto">
+      <div
+        class="stat bg-base-100/60 backdrop-blur rounded-2xl shadow-lg border border-base-300/50 p-4"
+      >
+        <div class="stat-value text-primary text-2xl">4.8★</div>
+        <div class="stat-desc text-xs">Valoración media</div>
+      </div>
+      <div
+        class="stat bg-base-100/60 backdrop-blur rounded-2xl shadow-lg border border-base-300/50 p-4"
+      >
+        <div class="stat-value text-secondary text-2xl">2.4K+</div>
+        <div class="stat-desc text-xs">Reseñas</div>
+      </div>
+      <div
+        class="stat bg-base-100/60 backdrop-blur rounded-2xl shadow-lg border border-base-300/50 p-4"
+      >
+        <div class="stat-value text-accent text-2xl">96%</div>
+        <div class="stat-desc text-xs">Recomiendan</div>
+      </div>
+      <div
+        class="stat bg-base-100/60 backdrop-blur rounded-2xl shadow-lg border border-base-300/50 p-4"
+      >
+        <div class="stat-value text-info text-2xl">890+</div>
+        <div class="stat-desc text-xs">Profesionales</div>
+      </div>
+    </div>
+
+    <!-- Testimonios principales -->
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      <!-- Testimonio 1: Madre -->
+      <div
+        class="card bg-base-100 shadow-2xl hover:shadow-3xl hover:-translate-y-2 transition-all duration-500 border border-base-300/50 group"
+      >
+        <div class="card-body p-8">
+          <!-- Header del testimonio -->
+          <div class="flex items-center mb-6">
             <div class="avatar">
               <div
-                class="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
+                class="w-16 rounded-full ring-4 ring-primary ring-offset-base-100 ring-offset-2 shadow-lg"
               >
                 <div
-                  class="bg-gradient-to-br from-primary to-secondary w-full h-full flex items-center justify-center text-white font-bold"
+                  class="bg-gradient-to-br from-primary to-secondary w-full h-full flex items-center justify-center text-white font-bold text-xl"
                 >
                   MP
                 </div>
               </div>
             </div>
-            <div class="ml-4">
-              <h4 class="font-semibold">María Pérez</h4>
+            <div class="ml-4 flex-1">
+              <h4 class="font-bold text-lg text-base-content">María Pérez</h4>
               <p class="text-sm text-base-content/60">
                 Madre de Carlos, 8 años
               </p>
+              <div class="flex items-center gap-1 mt-1">
+                <svg
+                  class="w-3 h-3 text-success"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  ></path>
+                </svg>
+                <span class="text-xs text-success font-medium">Verificado</span>
+              </div>
             </div>
-            <div class="ml-auto">
-              <div class="badge badge-primary badge-outline">Verificado</div>
+            <div class="text-right">
+              <div class="badge badge-primary badge-outline mb-2">Familia</div>
+              <div class="rating rating-sm">
+                {
+                  [...Array(5)].map((_, i) => (
+                    <input
+                      type="radio"
+                      class="mask mask-star-2 bg-warning w-3 h-3"
+                      checked={i < 5}
+                      disabled
+                    />
+                  ))
+                }
+              </div>
             </div>
           </div>
-          <div class="rating rating-sm mb-3">
-            <input
-              type="radio"
-              class="mask mask-star-2 bg-warning"
-              checked
-              disabled
-            />
-            <input
-              type="radio"
-              class="mask mask-star-2 bg-warning"
-              checked
-              disabled
-            />
-            <input
-              type="radio"
-              class="mask mask-star-2 bg-warning"
-              checked
-              disabled
-            />
-            <input
-              type="radio"
-              class="mask mask-star-2 bg-warning"
-              checked
-              disabled
-            />
-            <input
-              type="radio"
-              class="mask mask-star-2 bg-warning"
-              checked
-              disabled
-            />
+
+          <!-- Quote -->
+          <div class="relative">
+            <svg
+              class="absolute -top-2 -left-2 w-8 h-8 text-primary/20"
+              fill="currentColor"
+              viewBox="0 0 32 32"
+            >
+              <path
+                d="M10 8c-3.3 0-6 2.7-6 6v10h10V14h-4c0-2.2 1.8-4 4-4V8zm16 0c-3.3 0-6 2.7-6 6v10h10V14h-4c0-2.2 1.8-4 4-4V8z"
+              ></path>
+            </svg>
+            <blockquote
+              class="text-base-content/80 italic mb-6 pl-6 leading-relaxed"
+            >
+              "En solo 3 meses, Carlos mejoró su lectura un 40%. Los juegos lo
+              mantienen motivado y ya no ve la práctica como una tarea. Es
+              increíble ver su progreso día a día y cómo ha recuperado su
+              confianza."
+            </blockquote>
           </div>
-          <p class="text-base-content/80 italic">
-            "En solo 3 meses, Carlos mejoró su lectura un 40%. Los juegos lo
-            mantienen motivado y ya no ve la práctica como una tarea. Es
-            increíble ver su progreso día a día."
-          </p>
-          <div class="card-actions justify-end mt-4">
-            <div class="badge badge-ghost">3 meses usando la app</div>
+
+          <!-- Métricas del caso -->
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <div class="bg-primary/10 rounded-lg p-3 text-center">
+              <div class="text-2xl font-bold text-primary">+40%</div>
+              <div class="text-xs text-base-content/60">Mejora lectura</div>
+            </div>
+            <div class="bg-secondary/10 rounded-lg p-3 text-center">
+              <div class="text-2xl font-bold text-secondary">3M</div>
+              <div class="text-xs text-base-content/60">Tiempo de uso</div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div
+            class="flex items-center justify-between text-xs text-base-content/60"
+          >
+            <div class="flex items-center gap-1">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                ></path>
+              </svg>
+              Hace 2 semanas
+            </div>
+            <div class="badge badge-ghost badge-xs">Madrid, España</div>
           </div>
         </div>
       </div>
 
-      <!-- Testimonial 2 -->
+      <!-- Testimonio 2: Profesional -->
       <div
-        class="card bg-base-100 shadow-xl hover-lift"
-        data-aos="fade-up"
-        data-aos-delay="100"
+        class="card bg-base-100 shadow-2xl hover:shadow-3xl hover:-translate-y-2 transition-all duration-500 border border-base-300/50 group"
       >
-        <div class="card-body">
-          <div class="flex items-center mb-4">
+        <div class="card-body p-8">
+          <div class="flex items-center mb-6">
             <div class="avatar">
               <div
-                class="w-12 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2"
+                class="w-16 rounded-full ring-4 ring-secondary ring-offset-base-100 ring-offset-2 shadow-lg"
               >
                 <div
-                  class="bg-gradient-to-br from-secondary to-accent w-full h-full flex items-center justify-center text-white font-bold"
+                  class="bg-gradient-to-br from-secondary to-accent w-full h-full flex items-center justify-center text-white font-bold text-xl"
                 >
                   JG
                 </div>
               </div>
             </div>
-            <div class="ml-4">
-              <h4 class="font-semibold">Dr. Jorge García</h4>
+            <div class="ml-4 flex-1">
+              <h4 class="font-bold text-lg text-base-content">
+                Dr. Jorge García
+              </h4>
               <p class="text-sm text-base-content/60">Neuropediatra</p>
+              <p class="text-xs text-base-content/50">
+                Hospital Universitario La Paz
+              </p>
+              <div class="flex items-center gap-1 mt-1">
+                <svg
+                  class="w-3 h-3 text-success"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  ></path>
+                </svg>
+                <span class="text-xs text-success font-medium"
+                  >Profesional verificado</span
+                >
+              </div>
             </div>
-            <div class="ml-auto">
-              <div class="badge badge-secondary badge-outline">Profesional</div>
+            <div class="text-right">
+              <div class="badge badge-secondary badge-outline mb-2">Médico</div>
+              <div class="rating rating-sm">
+                {
+                  [...Array(5)].map((_, i) => (
+                    <input
+                      type="radio"
+                      class="mask mask-star-2 bg-warning w-3 h-3"
+                      checked={i < 5}
+                      disabled
+                    />
+                  ))
+                }
+              </div>
             </div>
           </div>
-          <div class="rating rating-sm mb-3">
-            <input
-              type="radio"
-              class="mask mask-star-2 bg-warning"
-              checked
-              disabled
-            />
-            <input
-              type="radio"
-              class="mask mask-star-2 bg-warning"
-              checked
-              disabled
-            />
-            <input
-              type="radio"
-              class="mask mask-star-2 bg-warning"
-              checked
-              disabled
-            />
-            <input
-              type="radio"
-              class="mask mask-star-2 bg-warning"
-              checked
-              disabled
-            />
-            <input
-              type="radio"
-              class="mask mask-star-2 bg-warning"
-              checked
-              disabled
-            />
+
+          <div class="relative">
+            <svg
+              class="absolute -top-2 -left-2 w-8 h-8 text-secondary/20"
+              fill="currentColor"
+              viewBox="0 0 32 32"
+            >
+              <path
+                d="M10 8c-3.3 0-6 2.7-6 6v10h10V14h-4c0-2.2 1.8-4 4-4V8zm16 0c-3.3 0-6 2.7-6 6v10h10V14h-4c0-2.2 1.8-4 4-4V8z"
+              ></path>
+            </svg>
+            <blockquote
+              class="text-base-content/80 italic mb-6 pl-6 leading-relaxed"
+            >
+              "La herramienta más completa y científicamente validada que he
+              visto. La recomiendo a todas las familias en mi consulta. Los
+              reportes de progreso son muy útiles para ajustar las
+              intervenciones terapéuticas."
+            </blockquote>
           </div>
-          <p class="text-base-content/80 italic">
-            "La herramienta más completa y científicamente validada que he
-            visto. La recomiendo a todas las familias en mi consulta."
-          </p>
-          <div class="card-actions justify-end mt-4">
-            <div class="badge badge-ghost">250+ pacientes</div>
+
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <div class="bg-secondary/10 rounded-lg p-3 text-center">
+              <div class="text-2xl font-bold text-secondary">250+</div>
+              <div class="text-xs text-base-content/60">Pacientes</div>
+            </div>
+            <div class="bg-accent/10 rounded-lg p-3 text-center">
+              <div class="text-2xl font-bold text-accent">2A</div>
+              <div class="text-xs text-base-content/60">Usando</div>
+            </div>
+          </div>
+
+          <div
+            class="flex items-center justify-between text-xs text-base-content/60"
+          >
+            <div class="flex items-center gap-1">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              Usuario premium
+            </div>
+            <div class="badge badge-ghost badge-xs">Madrid, España</div>
           </div>
         </div>
       </div>
 
-      <!-- Testimonial 3 -->
+      <!-- Testimonio 3: Educadora -->
       <div
-        class="card bg-base-100 shadow-xl hover-lift"
-        data-aos="fade-up"
-        data-aos-delay="200"
+        class="card bg-base-100 shadow-2xl hover:shadow-3xl hover:-translate-y-2 transition-all duration-500 border border-base-300/50 group"
       >
-        <div class="card-body">
-          <div class="flex items-center mb-4">
+        <div class="card-body p-8">
+          <div class="flex items-center mb-6">
             <div class="avatar">
               <div
-                class="w-12 rounded-full ring ring-accent ring-offset-base-100 ring-offset-2"
+                class="w-16 rounded-full ring-4 ring-accent ring-offset-base-100 ring-offset-2 shadow-lg"
               >
                 <div
-                  class="bg-gradient-to-br from-accent to-info w-full h-full flex items-center justify-center text-white font-bold"
+                  class="bg-gradient-to-br from-accent to-info w-full h-full flex items-center justify-center text-white font-bold text-xl"
                 >
                   AL
                 </div>
               </div>
             </div>
-            <div class="ml-4">
-              <h4 class="font-semibold">Ana López</h4>
+            <div class="ml-4 flex-1">
+              <h4 class="font-bold text-lg text-base-content">Ana López</h4>
               <p class="text-sm text-base-content/60">Psicopedagoga</p>
+              <p class="text-xs text-base-content/50">
+                Centro Educativo Integral
+              </p>
+              <div class="flex items-center gap-1 mt-1">
+                <svg
+                  class="w-3 h-3 text-success"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  ></path>
+                </svg>
+                <span class="text-xs text-success font-medium"
+                  >Educadora certificada</span
+                >
+              </div>
             </div>
-            <div class="ml-auto">
-              <div class="badge badge-accent badge-outline">Educador</div>
+            <div class="text-right">
+              <div class="badge badge-accent badge-outline mb-2">Educación</div>
+              <div class="rating rating-sm">
+                {
+                  [...Array(5)].map((_, i) => (
+                    <input
+                      type="radio"
+                      class="mask mask-star-2 bg-warning w-3 h-3"
+                      checked={i < 5}
+                      disabled
+                    />
+                  ))
+                }
+              </div>
             </div>
           </div>
-          <div class="rating rating-sm mb-3">
-            <input
-              type="radio"
-              class="mask mask-star-2 bg-warning"
-              checked
-              disabled
-            />
-            <input
-              type="radio"
-              class="mask mask-star-2 bg-warning"
-              checked
-              disabled
-            />
-            <input
-              type="radio"
-              class="mask mask-star-2 bg-warning"
-              checked
-              disabled
-            />
-            <input
-              type="radio"
-              class="mask mask-star-2 bg-warning"
-              checked
-              disabled
-            />
-            <input
-              type="radio"
-              class="mask mask-star-2 bg-warning"
-              checked
-              disabled
-            />
+
+          <div class="relative">
+            <svg
+              class="absolute -top-2 -left-2 w-8 h-8 text-accent/20"
+              fill="currentColor"
+              viewBox="0 0 32 32"
+            >
+              <path
+                d="M10 8c-3.3 0-6 2.7-6 6v10h10V14h-4c0-2.2 1.8-4 4-4V8zm16 0c-3.3 0-6 2.7-6 6v10h10V14h-4c0-2.2 1.8-4 4-4V8z"
+              ></path>
+            </svg>
+            <blockquote
+              class="text-base-content/80 italic mb-6 pl-6 leading-relaxed"
+            >
+              "Los reportes detallados me permiten personalizar las
+              intervenciones. Es la herramienta que necesitábamos en educación
+              especial. Mis estudiantes están más motivados que nunca."
+            </blockquote>
           </div>
-          <p class="text-base-content/80 italic">
-            "Los reportes detallados me permiten personalizar las
-            intervenciones. Es la herramienta que necesitábamos en educación
-            especial."
-          </p>
-          <div class="card-actions justify-end mt-4">
-            <div class="badge badge-ghost">2 años de uso</div>
+
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <div class="bg-accent/10 rounded-lg p-3 text-center">
+              <div class="text-2xl font-bold text-accent">45</div>
+              <div class="text-xs text-base-content/60">Estudiantes</div>
+            </div>
+            <div class="bg-info/10 rounded-lg p-3 text-center">
+              <div class="text-2xl font-bold text-info">18M</div>
+              <div class="text-xs text-base-content/60">Experiencia</div>
+            </div>
           </div>
+
+          <div
+            class="flex items-center justify-between text-xs text-base-content/60"
+          >
+            <div class="flex items-center gap-1">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"
+                ></path>
+              </svg>
+              Plan escolar
+            </div>
+            <div class="badge badge-ghost badge-xs">Barcelona, España</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Más testimonios en carrusel -->
+    <div class="max-w-4xl mx-auto mb-16">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl font-bold text-base-content mb-2">
+          Más Voces de Nuestra Comunidad
+        </h3>
+        <p class="text-base-content/70">
+          Testimonios rápidos de usuarios verificados
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Testimonio breve 1 -->
+        <div
+          class="card bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 p-6"
+        >
+          <div class="flex items-start gap-4">
+            <div class="avatar">
+              <div class="w-12 rounded-full bg-primary/20">
+                <div
+                  class="w-full h-full flex items-center justify-center text-primary font-bold"
+                >
+                  LC
+                </div>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <h5 class="font-semibold text-base-content">Luis Caballero</h5>
+                <div class="badge badge-primary badge-xs">Padre</div>
+              </div>
+              <p class="text-sm text-base-content/80 italic mb-2">
+                "Mi hija Sofia ya no llora cuando tiene que leer. Los juegos la
+                han ayudado muchísimo."
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="rating rating-xs">
+                  {
+                    [...Array(5)].map((_, i) => (
+                      <input
+                        type="radio"
+                        class="mask mask-star-2 bg-warning"
+                        checked={i < 5}
+                        disabled
+                      />
+                    ))
+                  }
+                </div>
+                <span class="text-xs text-base-content/60">Hace 1 semana</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonio breve 2 -->
+        <div
+          class="card bg-gradient-to-r from-secondary/10 to-secondary/5 border border-secondary/20 p-6"
+        >
+          <div class="flex items-start gap-4">
+            <div class="avatar">
+              <div class="w-12 rounded-full bg-secondary/20">
+                <div
+                  class="w-full h-full flex items-center justify-center text-secondary font-bold"
+                >
+                  RM
+                </div>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <h5 class="font-semibold text-base-content">Rosa Martín</h5>
+                <div class="badge badge-secondary badge-xs">Profesora</div>
+              </div>
+              <p class="text-sm text-base-content/80 italic mb-2">
+                "Uso Cognitive PlayKit en mi clase de apoyo. Los niños están más
+                atentos y participativos."
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="rating rating-xs">
+                  {
+                    [...Array(5)].map((_, i) => (
+                      <input
+                        type="radio"
+                        class="mask mask-star-2 bg-warning"
+                        checked={i < 4}
+                        disabled
+                      />
+                    ))
+                  }
+                </div>
+                <span class="text-xs text-base-content/60">Hace 3 días</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonio breve 3 -->
+        <div
+          class="card bg-gradient-to-r from-accent/10 to-accent/5 border border-accent/20 p-6"
+        >
+          <div class="flex items-start gap-4">
+            <div class="avatar">
+              <div class="w-12 rounded-full bg-accent/20">
+                <div
+                  class="w-full h-full flex items-center justify-center text-accent font-bold"
+                >
+                  PM
+                </div>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <h5 class="font-semibold text-base-content">
+                  Patricia Morales
+                </h5>
+                <div class="badge badge-accent badge-xs">Logopeda</div>
+              </div>
+              <p class="text-sm text-base-content/80 italic mb-2">
+                "Excelente complemento para mis sesiones. Los reportes son muy
+                detallados y útiles."
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="rating rating-xs">
+                  {
+                    [...Array(5)].map((_, i) => (
+                      <input
+                        type="radio"
+                        class="mask mask-star-2 bg-warning"
+                        checked={i < 5}
+                        disabled
+                      />
+                    ))
+                  }
+                </div>
+                <span class="text-xs text-base-content/60">Hace 5 días</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonio breve 4 -->
+        <div
+          class="card bg-gradient-to-r from-info/10 to-info/5 border border-info/20 p-6"
+        >
+          <div class="flex items-start gap-4">
+            <div class="avatar">
+              <div class="w-12 rounded-full bg-info/20">
+                <div
+                  class="w-full h-full flex items-center justify-center text-info font-bold"
+                >
+                  MH
+                </div>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <h5 class="font-semibold text-base-content">Miguel Herrera</h5>
+                <div class="badge badge-info badge-xs">Director</div>
+              </div>
+              <p class="text-sm text-base-content/80 italic mb-2">
+                "Implementamos la plataforma en todo el colegio. Los resultados
+                han superado nuestras expectativas."
+              </p>
+              <div class="flex items-center justify-between">
+                <div class="rating rating-xs">
+                  {
+                    [...Array(5)].map((_, i) => (
+                      <input
+                        type="radio"
+                        class="mask mask-star-2 bg-warning"
+                        checked={i < 5}
+                        disabled
+                      />
+                    ))
+                  }
+                </div>
+                <span class="text-xs text-base-content/60">Hace 2 semanas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to action para testimonios -->
+    <div class="text-center">
+      <div
+        class="card bg-base-100 shadow-xl max-w-2xl mx-auto p-8 border border-base-300/50"
+      >
+        <h3 class="text-2xl font-bold mb-4 text-base-content">
+          ¿Quieres compartir tu experiencia?
+        </h3>
+        <p class="text-base-content/70 mb-6">
+          Tu historia puede inspirar a otras familias y profesionales
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <button class="btn btn-primary rounded-full">
+            Escribir Reseña
+          </button>
+          <button class="btn btn-outline btn-secondary rounded-full">
+            Ver Más Testimonios
+          </button>
         </div>
       </div>
     </div>

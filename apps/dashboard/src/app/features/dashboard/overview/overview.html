@@ -1,0 +1,45 @@
+<div class="min-h-screen bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 p-6">
+  <!-- Navbar -->
+  <div class="navbar bg-base-100/90 backdrop-blur-lg shadow-xl mb-8">
+    <div class="flex-1">
+      <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Cognitive PlayKit</span>
+    </div>
+    <div class="flex-none">
+      <button class="btn btn-primary rounded-full" (click)="logout()">Cerrar Sesión</button>
+    </div>
+  </div>
+
+  <!-- Alert -->
+  <div class="alert alert-success mb-8 max-w-6xl mx-auto">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+    </svg>
+    <span class="font-medium">¡Hola {{ currentUser.name || 'Usuario Demo' }}! Dashboard con datos en tiempo real - 17 Agosto 2025</span>
+  </div>
+
+  <div class="max-w-7xl mx-auto space-y-8">
+    <!-- Stats Cards -->
+    <app-stats-cards></app-stats-cards>
+
+    <!-- Main Charts Row -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <app-bar-chart-gradient></app-bar-chart-gradient>
+      <app-line-chart-pulse></app-line-chart-pulse>
+      <app-donut-chart></app-donut-chart>
+    </div>
+
+    <!-- Progress & Quick Actions Row -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2">
+        <app-progress-rings></app-progress-rings>
+      </div>
+      <app-quick-actions></app-quick-actions>
+    </div>
+
+    <!-- Activity & Insights Row -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <app-activity-feed></app-activity-feed>
+      <app-insights></app-insights>
+    </div>
+  </div>
+</div>

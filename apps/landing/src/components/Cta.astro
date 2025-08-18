@@ -1,205 +1,579 @@
 <section
   id="cta"
-  class="py-20 bg-gradient-to-r from-primary via-secondary to-accent text-white"
+  class="py-20 bg-gradient-to-r from-primary via-secondary to-accent text-white relative overflow-hidden"
 >
-  <div class="container mx-auto px-4">
+  <!-- Elementos de fondo animados -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div
+      class="absolute top-10 left-10 w-96 h-96 bg-white/5 rounded-full filter blur-3xl animate-float"
+    >
+    </div>
+    <div
+      class="absolute bottom-10 right-10 w-80 h-80 bg-white/5 rounded-full filter blur-3xl animate-float-slow"
+    >
+    </div>
+    <div
+      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/3 rounded-full filter blur-3xl animate-pulse"
+    >
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <!-- Header principal -->
     <div class="text-center mb-16">
-      <h2
-        class="text-4xl md:text-5xl font-bold mb-6 font-lexend"
-        data-aos="zoom-in"
-      >
-        Comienza Hoy a Transformar el Futuro
+      <div class="badge badge-white text-primary badge-lg mb-6 p-4 shadow-lg">
+        🚀 EMPIEZA HOY
+      </div>
+
+      <h2 class="text-4xl md:text-6xl font-bold mb-6 font-lexend">
+        Comienza Hoy a
+        <br />
+        <span class="text-white/90">Transformar el Futuro</span>
       </h2>
+
       <p
-        class="text-xl text-white/90 max-w-3xl mx-auto"
-        data-aos="zoom-in"
-        data-aos-delay="100"
+        class="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-8"
       >
-        Únete a miles de familias que ya están cambiando la historia de sus
-        hijos
+        Únete a <span class="font-bold text-white">miles de familias</span> que ya
+        están cambiando la historia de sus hijos con dislexia
       </p>
+
+      <!-- Stats de conversión -->
+      <div class="flex flex-wrap justify-center gap-6 mb-12">
+        <div
+          class="flex items-center gap-2 bg-white/10 backdrop-blur rounded-full px-4 py-2"
+        >
+          <svg
+            class="w-5 h-5 text-white"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+            ></path>
+          </svg>
+          <span class="text-white/90 text-sm">Sin tarjeta de crédito</span>
+        </div>
+        <div
+          class="flex items-center gap-2 bg-white/10 backdrop-blur rounded-full px-4 py-2"
+        >
+          <svg
+            class="w-5 h-5 text-white"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"
+            ></path>
+          </svg>
+          <span class="text-white/90 text-sm">Cancela cuando quieras</span>
+        </div>
+        <div
+          class="flex items-center gap-2 bg-white/10 backdrop-blur rounded-full px-4 py-2"
+        >
+          <svg
+            class="w-5 h-5 text-white"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <span class="text-white/90 text-sm">Soporte 24/7</span>
+        </div>
+      </div>
     </div>
 
-    <!-- Pricing cards -->
-    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
+    <!-- Planes de precios mejorados -->
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
       <!-- Plan Gratuito -->
       <div
-        class="card bg-base-100 text-base-content shadow-2xl hover-lift"
-        data-aos="flip-left"
+        class="card bg-base-100 text-base-content shadow-2xl hover:shadow-3xl hover:-translate-y-2 transition-all duration-500 border border-base-300/50 group"
       >
-        <div class="card-body">
-          <div class="badge badge-ghost badge-lg mb-2">EVALUACIÓN</div>
-          <h3 class="card-title text-3xl">Gratis</h3>
-          <p class="text-base-content/60 mb-4">Perfecto para empezar</p>
-          <ul class="space-y-3 mb-6">
-            <li class="flex items-center gap-2">
-              <svg
-                class="w-5 h-5 text-success"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+        <div class="card-body p-8">
+          <div class="text-center mb-6">
+            <div class="badge badge-neutral badge-lg mb-4">EVALUACIÓN</div>
+            <h3 class="text-4xl font-bold mb-2">Gratis</h3>
+            <p class="text-base-content/60">Perfecto para empezar</p>
+          </div>
+
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <div
+                class="w-6 h-6 bg-success/20 rounded-full flex items-center justify-center"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                ></path>
-              </svg>
-              Test de detección completo
+                <svg
+                  class="w-4 h-4 text-success"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  ></path>
+                </svg>
+              </div>
+              <span class="text-base-content"
+                >Test de detección completo (15 min)</span
+              >
             </li>
-            <li class="flex items-center gap-2">
-              <svg
-                class="w-5 h-5 text-success"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+            <li class="flex items-center gap-3">
+              <div
+                class="w-6 h-6 bg-success/20 rounded-full flex items-center justify-center"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                ></path>
-              </svg>
-              Informe básico PDF
+                <svg
+                  class="w-4 h-4 text-success"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  ></path>
+                </svg>
+              </div>
+              <span class="text-base-content">Informe detallado en PDF</span>
             </li>
-            <li class="flex items-center gap-2">
-              <svg
-                class="w-5 h-5 text-success"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+            <li class="flex items-center gap-3">
+              <div
+                class="w-6 h-6 bg-success/20 rounded-full flex items-center justify-center"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                ></path>
-              </svg>
-              3 juegos de prueba
+                <svg
+                  class="w-4 h-4 text-success"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  ></path>
+                </svg>
+              </div>
+              <span class="text-base-content">3 juegos de muestra</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div
+                class="w-6 h-6 bg-success/20 rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-4 h-4 text-success"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  ></path>
+                </svg>
+              </div>
+              <span class="text-base-content">Recomendaciones básicas</span>
             </li>
           </ul>
-          <button class="btn btn-outline btn-primary rounded-full"
-            >Comenzar</button
+
+          <button
+            class="btn btn-outline btn-primary rounded-full w-full group-hover:btn-primary group-hover:text-white transition-all"
           >
+            Comenzar Gratis
+          </button>
+
+          <div class="text-center mt-4">
+            <p class="text-xs text-base-content/60">No se requiere tarjeta</p>
+          </div>
         </div>
       </div>
 
-      <!-- Plan Premium -->
+      <!-- Plan Premium (destacado) -->
       <div
-        class="card bg-primary text-primary-content shadow-2xl transform scale-105 hover-lift"
-        data-aos="flip-up"
+        class="card bg-primary text-primary-content shadow-2xl hover:shadow-3xl transform scale-105 hover:scale-110 transition-all duration-500 border-2 border-white/20 relative group"
       >
-        <div class="card-body">
-          <div class="badge badge-secondary badge-lg mb-2">MÁS POPULAR</div>
-          <h3 class="card-title text-3xl">Premium</h3>
-          <p class="text-primary-content/80 mb-4">
-            <span class="text-4xl font-bold">€19</span>/mes
-          </p>
-          <ul class="space-y-3 mb-6">
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                ></path>
-              </svg>
-              Todos los juegos (40+)
+        <!-- Badge de más popular -->
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+          <div
+            class="px-6 py-2 shadow-lg animate-pulse bg-secondary text-white text-sm font-bold rounded-full min-w-[140px] flex justify-center"
+          >
+            🔥 MÁS POPULAR
+          </div>
+        </div>
+
+        <div class="card-body p-8 pt-12">
+          <div class="text-center mb-6">
+            <div class="badge badge-white text-primary badge-lg mb-4">
+              PREMIUM
+            </div>
+            <div class="flex items-baseline justify-center gap-1 mb-2">
+              <span class="text-5xl font-bold">€19</span>
+              <span class="text-lg opacity-80">/mes</span>
+            </div>
+            <p class="text-primary-content/80">Todo lo que necesitas</p>
+          </div>
+
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <div
+                class="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-4 h-4 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  ></path>
+                </svg>
+              </div>
+              <span class="text-white">Biblioteca completa (40+ juegos)</span>
             </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                ></path>
-              </svg>
-              Dashboard completo
+            <li class="flex items-center gap-3">
+              <div
+                class="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-4 h-4 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  ></path>
+                </svg>
+              </div>
+              <span class="text-white">Dashboard completo con análisis</span>
             </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                ></path>
-              </svg>
-              Soporte prioritario
+            <li class="flex items-center gap-3">
+              <div
+                class="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-4 h-4 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  ></path>
+                </svg>
+              </div>
+              <span class="text-white">Soporte prioritario 24/7</span>
             </li>
-            <li class="flex items-center gap-2">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                ></path>
-              </svg>
-              Reportes ilimitados
+            <li class="flex items-center gap-3">
+              <div
+                class="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-4 h-4 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  ></path>
+                </svg>
+              </div>
+              <span class="text-white">Reportes familiares ilimitados</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div
+                class="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-4 h-4 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  ></path>
+                </svg>
+              </div>
+              <span class="text-white">App móvil completa</span>
             </li>
           </ul>
-          <button class="btn btn-secondary rounded-full shadow-lg"
-            >Suscribirse</button
+
+          <button
+            class="btn btn-secondary rounded-full w-full shadow-lg hover:shadow-xl group-hover:scale-105 transition-all"
           >
+            Probar 15 Días Gratis
+          </button>
+
+          <div class="text-center mt-4">
+            <p class="text-xs text-white/70">
+              Luego €19/mes • Cancela cuando quieras
+            </p>
+          </div>
         </div>
       </div>
 
       <!-- Plan Escolar -->
       <div
-        class="card bg-base-100 text-base-content shadow-2xl hover-lift"
-        data-aos="flip-right"
+        class="card bg-base-100 text-base-content shadow-2xl hover:shadow-3xl hover:-translate-y-2 transition-all duration-500 border border-base-300/50 group"
       >
-        <div class="card-body">
-          <div class="badge badge-info badge-lg mb-2">COLEGIOS</div>
-          <h3 class="card-title text-3xl">Escolar</h3>
-          <p class="text-base-content/60 mb-4">Precio personalizado</p>
-          <ul class="space-y-3 mb-6">
-            <li class="flex items-center gap-2">
-              <svg
-                class="w-5 h-5 text-success"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+        <div class="card-body p-8">
+          <div class="text-center mb-6">
+            <div class="badge badge-info badge-lg mb-4">COLEGIOS</div>
+            <h3 class="text-4xl font-bold mb-2">Contacta</h3>
+            <p class="text-base-content/60">Precio personalizado</p>
+          </div>
+
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <div
+                class="w-6 h-6 bg-success/20 rounded-full flex items-center justify-center"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                ></path>
-              </svg>
-              Usuarios ilimitados
+                <svg
+                  class="w-4 h-4 text-success"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  ></path>
+                </svg>
+              </div>
+              <span class="text-base-content">Usuarios ilimitados</span>
             </li>
-            <li class="flex items-center gap-2">
-              <svg
-                class="w-5 h-5 text-success"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+            <li class="flex items-center gap-3">
+              <div
+                class="w-6 h-6 bg-success/20 rounded-full flex items-center justify-center"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                ></path>
-              </svg>
-              Panel administrativo
+                <svg
+                  class="w-4 h-4 text-success"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  ></path>
+                </svg>
+              </div>
+              <span class="text-base-content"
+                >Panel administrativo avanzado</span
+              >
             </li>
-            <li class="flex items-center gap-2">
-              <svg
-                class="w-5 h-5 text-success"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+            <li class="flex items-center gap-3">
+              <div
+                class="w-6 h-6 bg-success/20 rounded-full flex items-center justify-center"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                ></path>
-              </svg>
-              Formación incluida
+                <svg
+                  class="w-4 h-4 text-success"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  ></path>
+                </svg>
+              </div>
+              <span class="text-base-content">Formación incluida</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div
+                class="w-6 h-6 bg-success/20 rounded-full flex items-center justify-center"
+              >
+                <svg
+                  class="w-4 h-4 text-success"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  ></path>
+                </svg>
+              </div>
+              <span class="text-base-content">Soporte dedicado</span>
             </li>
           </ul>
-          <button class="btn btn-outline btn-info rounded-full"
-            >Contactar</button
+
+          <button
+            class="btn btn-outline btn-info rounded-full w-full group-hover:btn-info group-hover:text-white transition-all"
           >
+            Contactar Ventas
+          </button>
+
+          <div class="text-center mt-4">
+            <p class="text-xs text-base-content/60">
+              Demo personalizada gratuita
+            </p>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Final CTA -->
+    <!-- Testimonial destacado -->
+    <div class="max-w-4xl mx-auto mb-16">
+      <div class="card bg-white/10 backdrop-blur border border-white/20 p-8">
+        <div class="flex items-center justify-center gap-4 mb-6">
+          <div class="avatar">
+            <div class="w-16 rounded-full ring-4 ring-white/30">
+              <div
+                class="bg-white/20 w-full h-full flex items-center justify-center text-white font-bold text-xl"
+              >
+                CG
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <h4 class="font-bold text-white text-lg">Carmen González</h4>
+            <p class="text-white/80 text-sm">
+              Directora Pedagógica, Colegio San Patricio
+            </p>
+            <div class="rating rating-sm mt-1">
+              <input
+                type="radio"
+                class="mask mask-star-2 bg-yellow-400 w-4 h-4"
+                checked
+                disabled
+              />
+              <input
+                type="radio"
+                class="mask mask-star-2 bg-yellow-400 w-4 h-4"
+                checked
+                disabled
+              />
+              <input
+                type="radio"
+                class="mask mask-star-2 bg-yellow-400 w-4 h-4"
+                checked
+                disabled
+              />
+              <input
+                type="radio"
+                class="mask mask-star-2 bg-yellow-400 w-4 h-4"
+                checked
+                disabled
+              />
+              <input
+                type="radio"
+                class="mask mask-star-2 bg-yellow-400 w-4 h-4"
+                checked
+                disabled
+              />
+            </div>
+          </div>
+        </div>
+        <blockquote class="text-center text-white/90 text-lg italic mb-4">
+          "Desde que implementamos Cognitive PlayKit, hemos visto una mejora del
+          73% en la detección temprana de dislexia. Es la mejor inversión que
+          hemos hecho."
+        </blockquote>
+        <div class="text-center">
+          <div class="badge badge-white text-primary">
+            ⭐ Colegio Certificado
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA final mejorado - SIN NPM -->
+    <div class="text-center mb-16">
+      <div
+        class="card bg-white/10 backdrop-blur max-w-lg mx-auto shadow-2xl border border-white/20 p-8"
+      >
+        <h3 class="text-2xl font-bold text-white mb-4">¿Listo para empezar?</h3>
+        <p class="text-white/80 mb-6">
+          Evaluación gratuita de 15 minutos para conocer el potencial de tu hijo
+        </p>
+        <button
+          class="btn bg-white text-primary btn-lg rounded-full w-full shadow-lg hover:bg-gray-100 font-semibold"
+        >
+          Comenzar Evaluación Gratuita
+        </button>
+        <p class="text-white/60 text-sm mt-3">
+          ✅ Sin compromisos • ✅ Resultados inmediatos
+        </p>
+      </div>
+    </div>
+
+    <!-- CTA final -->
     <div class="text-center">
-      <div class="mockup-code bg-base-300 max-w-md mx-auto" data-aos="zoom-in">
-        <pre data-prefix="$"><code>npm install cognitive-playkit</code></pre>
-        <pre
-          data-prefix=">"
-          class="text-warning"><code>¡Instalando futuro brillante!</code></pre>
-        <pre
-          data-prefix=">"
-          class="text-success"><code>✓ Listo para cambiar vidas</code></pre>
+      <div class="max-w-2xl mx-auto">
+        <h3 class="text-3xl font-bold mb-4 text-white">
+          ¿Listo para ver la diferencia?
+        </h3>
+        <p class="text-white/90 text-lg mb-8">
+          Miles de niños ya están superando sus desafíos. Tu hijo puede ser el
+          siguiente.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            class="btn btn-white text-primary btn-lg rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
+          >
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            Comenzar Ahora
+          </button>
+          <button
+            class="btn btn-outline border-white text-white hover:bg-white hover:text-primary btn-lg rounded-full transition-all"
+          >
+            <svg
+              class="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+              ></path>
+            </svg>
+            Ver Demo en Vivo
+          </button>
+        </div>
+
+        <!-- Garantías finales -->
+        <div class="flex flex-wrap justify-center gap-6 mt-8">
+          <div class="flex items-center gap-2 text-white/80 text-sm">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              ></path>
+            </svg>
+            Datos seguros GDPR
+          </div>
+          <div class="flex items-center gap-2 text-white/80 text-sm">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            Garantía 30 días
+          </div>
+          <div class="flex items-center gap-2 text-white/80 text-sm">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+              ></path>
+            </svg>
+            Soporte 24/7
+          </div>
+        </div>
       </div>
     </div>
   </div>

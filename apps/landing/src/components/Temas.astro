@@ -1,51 +1,223 @@
-<dialog id="theme-modal" class="modal">
-  <div class="modal-box">
-    <h3 class="font-bold text-lg mb-4">Personaliza tu experiencia</h3>
-    <div class="grid grid-cols-2 gap-4">
-      <button class="btn btn-outline" onclick="changeTheme('cognitive')"
-        >🎨 Cognitive</button
-      >
-      <button class="btn btn-outline" onclick="changeTheme('dyslexia')"
-        >👁️ Dislexia</button
-      >
-      <button class="btn btn-outline" onclick="changeTheme('light')"
-        >☀️ Claro</button
-      >
-      <button class="btn btn-outline" onclick="changeTheme('dark')"
-        >🌙 Oscuro</button
-      >
-      <button class="btn btn-outline" onclick="changeTheme('cupcake')"
-        >🧁 Cupcake</button
-      >
-      <button class="btn btn-outline" onclick="changeTheme('cyberpunk')"
-        >🤖 Cyberpunk</button
-      >
+<section
+  id="sobre-dislexia"
+  class="py-20 bg-gradient-to-br from-primary/5 to-secondary/5"
+>
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-6 text-base-content">
+        Entendiendo la <span class="text-gradient-rainbow">Dislexia</span>
+      </h2>
+      <p class="text-xl text-base-content/70 max-w-3xl mx-auto">
+        La dislexia no es una limitación, es una forma diferente de procesar la
+        información. Conozcamos juntos cómo identificarla y apoyarla.
+      </p>
     </div>
-    <div class="divider">Accesibilidad</div>
-    <div class="space-y-3">
-      <button
-        class="btn btn-block btn-outline"
-        onclick="document.body.classList.toggle('font-opendyslexic')"
-      >
-        🔤 Fuente OpenDyslexic
-      </button>
-      <button
-        class="btn btn-block btn-outline"
-        onclick="document.body.classList.toggle('high-contrast')"
-      >
-        🔆 Alto Contraste
-      </button>
-      <button
-        class="btn btn-block btn-outline"
-        onclick="document.body.classList.toggle('large-text')"
-      >
-        🔍 Texto Grande
-      </button>
+
+    <!-- Grid principal -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+      <!-- ¿Qué es la dislexia? -->
+      <div class="card bg-base-200 shadow-xl border border-base-300/50">
+        <div class="card-body p-8">
+          <div class="flex items-center mb-6">
+            <div class="text-4xl mr-4">🧠</div>
+            <h3 class="card-title text-2xl text-base-content">
+              ¿Qué es la Dislexia?
+            </h3>
+          </div>
+          <div class="space-y-4 text-base-content/80">
+            <p>
+              La dislexia es una <strong class="text-base-content"
+                >diferencia neurológica</strong
+              > que afecta cómo el cerebro procesa el lenguaje escrito.
+            </p>
+
+            <!-- Estadística mejorada - SIN card dentro de card -->
+            <div class="bg-primary/10 rounded-lg p-6 border border-primary/20">
+              <div class="text-center">
+                <div class="text-sm font-semibold text-base-content/60 mb-2">
+                  PREVALENCIA
+                </div>
+                <div class="text-2xl font-bold text-primary mb-2">1 de 10</div>
+                <div class="text-sm text-base-content/60">
+                  niños tiene dislexia
+                </div>
+              </div>
+            </div>
+
+            <p>
+              <strong class="text-base-content"
+                >No está relacionada con la inteligencia.</strong
+              > Muchas personas con dislexia son altamente creativas y tienen habilidades
+              excepcionales.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Señales tempranas -->
+      <div class="card bg-base-200 shadow-xl border border-base-300/50">
+        <div class="card-body p-8">
+          <div class="flex items-center mb-6">
+            <div class="text-4xl mr-4">🔍</div>
+            <h3 class="card-title text-2xl text-base-content">
+              Señales Tempranas
+            </h3>
+          </div>
+          <div class="space-y-4">
+            <div class="alert bg-info/10 border border-info/30 p-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                class="stroke-info shrink-0 w-5 h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+              <span class="text-base-content text-sm">
+                <strong>4-6 años:</strong> Dificultad para rimar o reconocer sonidos
+              </span>
+            </div>
+            <div class="alert bg-warning/10 border border-warning/30 p-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                class="stroke-warning shrink-0 w-5 h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"
+                ></path>
+              </svg>
+              <span class="text-base-content text-sm">
+                <strong>6-8 años:</strong> Confunde letras como b/d, p/q
+              </span>
+            </div>
+            <div class="alert bg-error/10 border border-error/30 p-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                class="stroke-error shrink-0 w-5 h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+              <span class="text-base-content text-sm">
+                <strong>8+ años:</strong> Lectura lenta, evita leer en voz alta
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="modal-action">
-      <form method="dialog">
-        <button class="btn">Cerrar</button>
-      </form>
+
+    <!-- Impacto emocional mejorado - Stats en línea horizontal -->
+    <div
+      class="card bg-gradient-to-r from-warning/10 to-error/10 shadow-xl mb-16 border border-warning/20"
+    >
+      <div class="card-body p-8 text-center">
+        <div class="text-5xl mb-6">💔</div>
+        <h3 class="text-3xl font-bold mb-6 text-base-content">
+          El Impacto Emocional Importa
+        </h3>
+        <!-- Stats en línea horizontal - CORREGIDO -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div class="text-center">
+            <div class="text-2xl font-bold text-error mb-2">70%</div>
+            <div class="text-sm text-base-content/70">
+              experimenta ansiedad escolar
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl font-bold text-warning mb-2">40%</div>
+            <div class="text-sm text-base-content/70">
+              desarrolla baja autoestima
+            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl font-bold text-success mb-2">85%</div>
+            <div class="text-sm text-base-content/70">
+              mejora con apoyo temprano
+            </div>
+          </div>
+        </div>
+        <div class="mt-8">
+          <p class="text-lg text-base-content/80 max-w-2xl mx-auto">
+            <strong class="text-base-content">
+              La detección y apoyo temprano puede cambiar completamente la
+              historia de un niño.
+            </strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cómo ayudamos - NOMBRE CORREGIDO -->
+    <div class="text-center">
+      <h3 class="text-3xl font-bold mb-8 text-base-content">
+        Cómo <span class="text-primary">Cognitive PlayKit</span> Marca la Diferencia
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div
+          class="card bg-base-200 shadow-lg border border-base-300/50 hover:shadow-xl transition-all"
+        >
+          <div class="card-body text-center p-6">
+            <div class="text-3xl mb-3">🎯</div>
+            <h4 class="font-bold mb-2 text-base-content">
+              Detectamos Temprano
+            </h4>
+            <p class="text-sm text-base-content/70">
+              Test científico en 15 minutos
+            </p>
+          </div>
+        </div>
+        <div
+          class="card bg-base-200 shadow-lg border border-base-300/50 hover:shadow-xl transition-all"
+        >
+          <div class="card-body text-center p-6">
+            <div class="text-3xl mb-3">🎮</div>
+            <h4 class="font-bold mb-2 text-base-content">Entretenemos</h4>
+            <p class="text-sm text-base-content/70">
+              Juegos que fortalecen habilidades
+            </p>
+          </div>
+        </div>
+        <div
+          class="card bg-base-200 shadow-lg border border-base-300/50 hover:shadow-xl transition-all"
+        >
+          <div class="card-body text-center p-6">
+            <div class="text-3xl mb-3">👥</div>
+            <h4 class="font-bold mb-2 text-base-content">Acompañamos</h4>
+            <p class="text-sm text-base-content/70">
+              Comunidad de apoyo familiar
+            </p>
+          </div>
+        </div>
+        <div
+          class="card bg-base-200 shadow-lg border border-base-300/50 hover:shadow-xl transition-all"
+        >
+          <div class="card-body text-center p-6">
+            <div class="text-3xl mb-3">📈</div>
+            <h4 class="font-bold mb-2 text-base-content">Medimos Progreso</h4>
+            <p class="text-sm text-base-content/70">
+              Seguimiento personalizado
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</dialog>
+</section>

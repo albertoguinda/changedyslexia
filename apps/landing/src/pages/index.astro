@@ -8,6 +8,7 @@ import Testimonials from "../components/Testimonials.astro";
 import Cta from "../components/Cta.astro";
 import Footer from "../components/Footer.astro";
 import Temas from "../components/Temas.astro";
+
 import "../styles/global.css";
 import "../styles/cognitive.css";
 ---
@@ -15,27 +16,27 @@ import "../styles/cognitive.css";
 <Layout
   title="Cognitive PlayKit - Transformando el Aprendizaje para Niños con Dislexia"
 >
-  <!-- Hero Section con DaisyUI -->
+  <!-- Sección principal / portada -->
   <Hero />
 
-  <!-- Features Section con Cards mejoradas -->
+  <!-- Características principales -->
   <Features />
 
-  <!-- Games Section con diseño mejorado -->
+  <!-- Qué hace la plataforma -->
+  <Temas />
+
+  <!-- Juegos y actividades -->
   <Games />
 
-  <!-- Impact Section con estadísticas mejoradas -->
+  <!-- Impacto y beneficios -->
   <Impact />
 
-  <!-- Testimonials con carousel -->
+  <!-- Opiniones de usuarios -->
   <Testimonials />
 
-  <!-- CTA Final con pricing -->
+  <!-- Llamado a la acción -->
   <Cta />
 
   <!-- Footer -->
   <Footer />
-
-  <!-- Modal de temas -->
-  <Temas />
 </Layout>

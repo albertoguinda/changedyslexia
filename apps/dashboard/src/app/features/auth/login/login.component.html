@@ -1,0 +1,62 @@
+<div class="min-h-screen bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 flex items-center justify-center p-4">
+  <div class="w-full max-w-md relative z-10">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <h1 class="text-2xl font-bold text-gradient-rainbow">Cognitive PlayKit</h1>
+      <p class="text-xl text-base-content/70">Accede a tu dashboard</p>
+    </div>
+
+    <!-- Card de login -->
+    <div class="card bg-base-100 shadow-2xl">
+      <div class="card-body">
+        <!-- Error alert -->
+        <div *ngIf="errorMessage" class="alert alert-error mb-4">
+          <span>{{ errorMessage }}</span>
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-6">
+          <!-- Email -->
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text font-semibold">Email</span>
+            </label>
+            <input 
+              type="email" 
+              formControlName="email"
+              placeholder="demo@cognitiveplaykit.com"
+              class="input input-bordered focus:input-primary"
+            />
+          </div>
+
+          <!-- Password -->
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text font-semibold">Contraseña</span>
+            </label>
+            <input 
+              type="password"
+              formControlName="password"
+              placeholder="demo123"
+              class="input input-bordered focus:input-primary"
+            />
+          </div>
+
+          <!-- Submit -->
+          <button 
+            type="submit" 
+            class="btn btn-primary w-full"
+            [class.loading]="isLoading"
+            [disabled]="isLoading"
+          >
+            {{ isLoading ? 'Iniciando sesión...' : 'Iniciar Sesión' }}
+          </button>
+        </form>
+
+        <!-- Demo info -->
+        <div class="alert alert-info mt-4">
+          <span>Demo: demo@cognitiveplaykit.com / demo123</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

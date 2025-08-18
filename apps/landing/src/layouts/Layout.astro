@@ -109,6 +109,51 @@ const { title } = Astro.props;
     <slot />
 
     <script>
+      // Función global de tema
+      const themes = [
+        "light",
+        "dark",
+        "cupcake",
+        "cyberpunk",
+        "emerald",
+        "synthwave",
+        "retro",
+        "valentine",
+      ];
+      let themeIndex = 0;
+
+      window.toggleTheme = function () {
+        themeIndex = (themeIndex + 1) % themes.length;
+        const newTheme = themes[themeIndex];
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        localStorage.setItem("themeIndex", themeIndex.toString());
+
+        // Actualizar icono si existe
+        const icon = document.getElementById("theme-icon");
+        if (icon) {
+          if (
+            newTheme === "dark" ||
+            newTheme === "cyberpunk" ||
+            newTheme === "synthwave"
+          ) {
+            icon.innerHTML =
+              '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />';
+          } else {
+            icon.innerHTML =
+              '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />';
+          }
+        }
+      };
+
+      // Cargar tema guardado al inicio
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        const savedIndex = localStorage.getItem("themeIndex") || "0";
+        themeIndex = parseInt(savedIndex);
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      });
+
       // Mejorar navegación con teclado
       document.addEventListener("keydown", function (e) {
         if (e.key === "Tab") {
@@ -118,11 +163,14 @@ const { title } = Astro.props;
 
       // Smooth scroll para navegación
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
+        anchor.addEventListener("click", (e) => {
           e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
+          const target = (e.currentTarget as HTMLAnchorElement).getAttribute(
+            "href"
+          );
+          const element = document.querySelector(target!);
+          if (element) {
+            element.scrollIntoView({
               behavior: "smooth",
               block: "start",
             });
