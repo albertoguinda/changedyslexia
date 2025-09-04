@@ -1,6 +1,64 @@
-@import "tailwindcss";
-@plugin "daisyui";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
-  font-family: 'Inter', sans-serif;
+@layer base {
+  body {
+    @apply font-sans bg-gray-50 text-gray-900;
+  }
 }
+
+@layer components {
+  .card {
+    @apply bg-white rounded-lg p-6 shadow-sm border border-gray-200;
+  }
+  
+  .metric-card {
+    @apply bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg p-4;
+  }
+}
+
+/* Clases personalizadas para los componentes */
+.card {
+  @apply bg-white rounded-lg shadow-md border border-gray-200;
+}
+
+.card-body {
+  @apply p-6;
+}
+
+.card-title {
+  @apply text-lg font-semibold mb-2;
+}
+
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-success {
+  @apply bg-green-100 text-green-800;
+}
+
+.badge-warning {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.badge-neutral {
+  @apply bg-gray-100 text-gray-800;
+}
+
+/* Colores personalizados */
+.text-primary { @apply text-blue-600; }
+.text-secondary { @apply text-cyan-600; }
+.text-accent { @apply text-orange-600; }
+.text-info { @apply text-purple-600; }
+
+.border-primary\/20 { @apply border-blue-200; }
+.border-secondary\/20 { @apply border-cyan-200; }
+.border-accent\/20 { @apply border-orange-200; }
+.border-info\/20 { @apply border-purple-200; }
+
+.from-primary\/10 { @apply from-blue-50; }
+.from-secondary\/10 { @apply from-cyan-50; }
+.from-accent\/10 { @apply from-orange-50; }
+.from-info\/10 { @apply from-purple-50; }

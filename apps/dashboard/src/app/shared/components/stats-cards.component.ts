@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,59 +6,79 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-      <div *ngFor="let stat of stats" class="card bg-base-100 shadow-lg hover:shadow-xl transition-all duration-300">
-        <div class="card-body p-4">
-          <div class="flex items-center justify-between">
-            <div>
-              <p class="text-xs text-base-content/60 uppercase tracking-wide">{{stat.label}}</p>
-              <p class="text-2xl font-bold" [ngClass]="stat.colorClass">{{stat.value}}</p>
-              <p class="text-xs" [ngClass]="stat.trend > 0 ? 'text-success' : 'text-error'">
-                <span>{{stat.trend > 0 ? '↗' : '↘'}} {{Math.abs(stat.trend)}}% vs {{stat.period}}</span>
-              </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Sesiones de Hoy -->
+      <div class="card bg-gradient-to-br from-primary/10 to-primary/5 shadow-xl border border-primary/20">
+        <div class="card-body">
+          <h2 class="card-title text-primary text-sm font-medium">Sesiones Hoy</h2>
+          <div class="flex items-center gap-3">
+            <div class="text-3xl font-bold text-primary">{{ data?.todaySessions || 0 }}</div>
+            <div class="badge" [ngClass]="getTrendBadgeClass()">
+              {{ getTrendText() }}
             </div>
-            <div class="text-3xl opacity-70">{{stat.icon}}</div>
           </div>
+          <p class="text-xs opacity-70">vs semana anterior</p>
+        </div>
+      </div>
+
+      <!-- Total Sesiones -->
+      <div class="card bg-gradient-to-br from-secondary/10 to-secondary/5 shadow-xl border border-secondary/20">
+        <div class="card-body">
+          <h2 class="card-title text-secondary text-sm font-medium">Total Sesiones</h2>
+          <div class="flex items-center gap-3">
+            <div class="text-3xl font-bold text-secondary">{{ data?.totalSessions || 0 }}</div>
+            <div class="text-xs opacity-70">↗️ +2% vs mes</div>
+          </div>
+          <p class="text-xs opacity-70">Últimos 30 días</p>
+        </div>
+      </div>
+
+      <!-- Puntuación Promedio -->
+      <div class="card bg-gradient-to-br from-accent/10 to-accent/5 shadow-xl border border-accent/20">
+        <div class="card-body">
+          <h2 class="card-title text-accent text-sm font-medium">Racha Días</h2>
+          <div class="flex items-center gap-3">
+            <div class="text-3xl font-bold text-accent">{{ data?.averageScore || 0 }}</div>
+            <div class="text-xs opacity-70">🔥 +3 días</div>
+          </div>
+          <p class="text-xs opacity-70">Puntuación promedio</p>
+        </div>
+      </div>
+
+      <!-- Precisión -->
+      <div class="card bg-gradient-to-br from-info/10 to-info/5 shadow-xl border border-info/20">
+        <div class="card-body">
+          <h2 class="card-title text-info text-sm font-medium">Precisión</h2>
+          <div class="flex items-center gap-3">
+            <div class="text-3xl font-bold text-info">{{ data?.averageAccuracy || 0 }}%</div>
+            <div class="text-xs opacity-70">📊 87% vs mes</div>
+          </div>
+          <p class="text-xs opacity-70">Promedio de aciertos</p>
         </div>
       </div>
     </div>
   `
 })
 export class StatsCardsComponent {
-  Math = Math;
-  
-  stats = [
-    {
-      label: 'Sesiones Hoy',
-      value: '6',
-      trend: +15,
-      period: 'ayer',
-      icon: '���',
-      colorClass: 'text-primary'
-    },
-    {
-      label: 'Tiempo Total',
-      value: '2h 15m',
-      trend: +8,
-      period: 'semana',
-      icon: '⏱️',
-      colorClass: 'text-secondary'
-    },
-    {
-      label: 'Precisión',
-      value: '87%',
-      trend: +12,
-      period: 'mes',
-      icon: '���',
-      colorClass: 'text-accent'
-    },
-    {
-      label: 'Racha Días',
-      value: '9',
-      trend: +3,
-      period: 'récord',
-      icon: '���',
-      colorClass: 'text-warning'
+  @Input() data: any = null;
+
+  getTrendBadgeClass(): string {
+    if (!this.data?.trend) return 'badge-neutral';
+
+    switch (this.data.trend) {
+      case 'improving': return 'badge-success';
+      case 'declining': return 'badge-warning';
+      default: return 'badge-neutral';
     }
-  ];
+  }
+
+  getTrendText(): string {
+    if (!this.data?.trend) return 'Estable';
+
+    switch (this.data.trend) {
+      case 'improving': return '↗️ Mejorando';
+      case 'declining': return '↘️ Bajando';
+      default: return '→ Estable';
+    }
+  }
 }
