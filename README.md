@@ -67,7 +67,7 @@ Demostración técnica integral que muestra arquitectura de desarrollo web moder
 
 ## Inicio Rápido
 
-```bash
+````bash
 # Clonar e instalar
 git clone https://github.com/albertoguinda/changedyslexia.git
 cd changedyslexia
@@ -75,13 +75,18 @@ npm run setup
 
 # Iniciar todos los servicios (5 apps simultáneamente)
 npm run dev
+´´´
+
 Requisitos: Node.js 18+, PHP 8.2+, MySQL
 Comandos de Desarrollo
-bashnpm run dev          # Iniciar las 5 aplicaciones
+```bash
+npm run dev          # Iniciar las 5 aplicaciones
 npm run dev:core     # Solo API + Dashboard + Landing
 npm run build        # Construir todas las aplicaciones frontend
 npm run test         # Ejecutar suites de pruebas
 npm run clean        # Limpiar dependencias y builds
+´´´
+
 Datos y Métricas
 La plataforma procesa datos reales de evaluación de dislexia incluyendo:
 
@@ -126,6 +131,7 @@ Concurrently (Orquestación de procesos)
 Git (Control de versiones)
 
 Estructura del Proyecto
+```bash
 cognitive-playkit/
 ├── apps/
 │   ├── api/                    # API REST Symfony
@@ -138,6 +144,8 @@ cognitive-playkit/
 ├── tools/                      # Herramientas de desarrollo
 ├── package.json               # Configuración monorepo
 └── README.md                  # Documentación
+´´´
+
 Construido para Change Dyslexia
 Este proyecto demuestra capacidades técnicas relevantes para la misión de Change Dyslexia:
 
@@ -151,11 +159,11 @@ Desarrollador
 Alberto Guinda - Desarrollador Full-Stack
 Especializado en tecnología educativa y aplicaciones web enfocadas en accesibilidad.
 
-Portfolio: albertoguindaportfolio.vercel.app
-LinkedIn: linkedin.com/in/albertoguindasevilla
-GitHub: github.com/albertoguinda
-Email: albertoguindasevilla@gmail.com
+(Portfolio) [albertoguindaportfolio.vercel.app]
+(LinkedIn) [linkedin.com/in/albertoguindasevilla]
+(GitHub) [github.com/albertoguinda]
+(Email) [albertoguindasevilla@gmail.com]
 
 
 Este proyecto demuestra prácticas modernas de desarrollo web en el contexto de tecnología educativa e investigación en dislexia.
-```
+````
