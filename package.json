@@ -1,68 +1,59 @@
 {
-  "name": "cognitive-playkit",
-  "version": "1.0.0",
-  "description": "Plataforma educativa para dislexia - Change Dyslexia Demo Project",
-  "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
-  "scripts": {
-    "setup": "npm install && npm run install:all",
-    "install:all": "npm run install:landing && npm run install:dashboard && npm run install:games",
-    "install:landing": "cd apps/landing && npm install",
-    "install:dashboard": "cd apps/dashboard && npm install",
-    "install:games": "cd apps/games/phaser-games && npm install",
-    "dev": "concurrently \"npm run dev:landing\" \"npm run dev:dashboard\" \"npm run dev:api\"",
-    "dev:landing": "cd apps/landing && npm run dev",
-    "dev:dashboard": "cd apps/dashboard && ng serve --port 4201",
-    "dev:api": "cd apps/api && symfony serve --port=8000",
-    "dev:games": "cd apps/games/phaser-games && npm run dev",
-    "build": "npm run build:landing && npm run build:dashboard",
-    "build:landing": "cd apps/landing && npm run build",
-    "build:dashboard": "cd apps/dashboard && npm run build --prod",
-    "test": "npm run test:dashboard",
-    "test:dashboard": "cd apps/dashboard && ng test",
-    "lint": "npm run lint:dashboard && npm run lint:landing",
-    "lint:dashboard": "cd apps/dashboard && ng lint",
-    "lint:landing": "cd apps/landing && npm run lint",
-    "clean": "rm -rf apps/*/node_modules packages/*/node_modules node_modules"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
-    "concurrently": "^8.2.2",
-    "cross-env": "^7.0.3",
-    "eslint": "^8.45.0",
-    "prettier": "^3.0.0"
-  },
-  "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=9.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/albertoguinda/cognitive-playkit.git"
-  },
-  "keywords": [
-    "dislexia",
-    "educacion",
-    "angular",
-    "symfony",
-    "phaser",
-    "unity",
-    "capacitor",
-    "tailwind",
-    "change-dyslexia"
-  ],
-  "author": "Alberto Guinda",
-  "license": "MIT",
-  "dependencies": {
-    "@angular/animations": "^20.1.7",
-    "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/typography": "^0.5.16",
-    "chart.js": "^4.5.0",
-    "daisyui": "^5.0.50",
-    "ng2-charts": "^8.0.0"
-  }
+ "name": "cognitive-playkit",
+ "version": "1.0.0",
+ "description": "Plataforma educativa para dislexia - Change Dyslexia Demo Project",
+ "private": true,
+ "engines": {
+  "node": ">=18.0.0",
+  "npm": ">=9.0.0"
+ },
+ "workspaces": [
+  "apps/landing",
+  "apps/dashboard",
+  "apps/games/letter-detective",
+  "apps/games/word-builder"
+ ],
+ "scripts": {
+  "setup": "npm install && npm run setup:workspaces && npm run setup:api",
+  "setup:workspaces": "npm install --workspaces",
+  "setup:api": "echo \"Recuerda configurar la base de datos MySQL para la API\"",
+  "dev": "npm run check:requirements && concurrently --kill-others-on-fail --prefix \"[{name}]\" --names \"API,LANDING,DASHBOARD,LETTER,WORD\" --prefix-colors \"red,cyan,yellow,green,magenta\" \"npm run dev:api\" \"npm run dev:landing\" \"npm run dev:dashboard\" \"npm run dev:letter\" \"npm run dev:word\"",
+  "dev:core": "concurrently --kill-others-on-fail --prefix \"[{name}]\" --names \"API,LANDING,DASHBOARD\" --prefix-colors \"red,cyan,yellow\" \"npm run dev:api\" \"npm run dev:landing\" \"npm run dev:dashboard\"",
+  "dev:frontend": "concurrently --prefix \"[{name}]\" --names \"LANDING,DASHBOARD\" --prefix-colors \"cyan,yellow\" \"npm run dev:landing\" \"npm run dev:dashboard\"",
+  "dev:games": "concurrently --prefix \"[{name}]\" --names \"LETTER,WORD\" --prefix-colors \"green,magenta\" \"npm run dev:letter\" \"npm run dev:word\"",
+  "dev:api": "cd apps/api && php -S localhost:8000 -t public/",
+  "dev:landing": "cd apps/landing && npm run dev",
+  "dev:dashboard": "cd apps/dashboard && npm start",
+  "dev:letter": "cd apps/games/letter-detective && npm run dev",
+  "dev:word": "cd apps/games/word-builder && npm run dev",
+  "build": "npm run build:frontend && npm run build:games",
+  "build:frontend": "concurrently \"npm run build:landing\" \"npm run build:dashboard\"",
+  "build:games": "concurrently \"npm run build:letter\" \"npm run build:word\"",
+  "build:landing": "cd apps/landing && npm run build",
+  "build:dashboard": "cd apps/dashboard && npm run build",
+  "build:letter": "cd apps/games/letter-detective && npm run build",
+  "build:word": "cd apps/games/word-builder && npm run build",
+  "test": "npm run test --workspaces --if-present",
+  "lint": "npm run lint --workspaces --if-present",
+  "format": "npm run format --workspaces --if-present",
+  "clean": "npm run clean:deps && npm run clean:builds",
+  "clean:deps": "rm -rf node_modules apps/*/node_modules apps/games/*/node_modules",
+  "clean:builds": "rm -rf apps/*/dist apps/*/build apps/games/*/dist apps/games/*/build",
+  "reinstall": "npm run clean:deps && npm run setup",
+  "check:requirements": "node -e \"console.log('Node:', process.version)\" && php --version > /dev/null && echo \"PHP disponible\" || echo \"PHP requerido\"",
+  "ports": "echo \"PUERTOS: API http://localhost:8000 | Landing http://localhost:4321 | Dashboard http://localhost:4200 | Letter http://localhost:3001 | Word http://localhost:3002\"",
+  "status": "curl -f http://localhost:8000/api/metrics/dashboard > /dev/null 2>&1 && echo \"API funcionando\" || echo \"API no responde\"",
+  "health": "npm run check:requirements && npm run status",
+  "deploy:build": "npm run build && echo \"Build completado para deployment\""
+ },
+ "devDependencies": {
+  "concurrently": "^8.2.2",
+  "cross-env": "^7.0.3",
+  "listr2": "^9.0.3"
+ },
+ "dependencies": {
+  "@types/d3": "^7.4.3",
+  "chart.js": "^4.5.0",
+  "d3": "^7.9.0"
+ }
 }

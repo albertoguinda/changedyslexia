@@ -8,6 +8,7 @@ import Testimonials from "../components/Testimonials.astro";
 import Cta from "../components/Cta.astro";
 import Footer from "../components/Footer.astro";
 import Temas from "../components/Temas.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
 
 import "../styles/global.css";
 import "../styles/cognitive.css";
@@ -39,4 +40,7 @@ import "../styles/cognitive.css";
 
   <!-- Footer -->
   <Footer />
+
+  <!-- Botón de scroll to top -->
+  <ScrollToTop client:load />
 </Layout>
