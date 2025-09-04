@@ -4,14 +4,14 @@
 
 Demostración técnica integral que muestra arquitectura de desarrollo web moderna, diseñada específicamente para el dominio educativo de la dislexia.
 
-## 🚀 Demo en Vivo
+## Demo en Vivo
 
 - **Dashboard**: http://localhost:4200
 - **API**: http://localhost:8000/api/metrics/dashboard
 - **Juegos**: Letter Detective (3001) | Word Builder (3002)
 - **Landing**: http://localhost:4321
 
-## 🏗️ Arquitectura del Sistema
+## Arquitectura del Sistema
 
 ┌─────────────────┬──────────────────┬─────────────────┐
 │ Frontend │ Backend │ Juegos │
@@ -25,7 +25,7 @@ Demostración técnica integral que muestra arquitectura de desarrollo web moder
 │ SSR Ready │ Respuestas JSON │ Datos tiempo real│
 └─────────────────┴──────────────────┴─────────────────┘
 
-## 🎯 Características Principales
+## Características Principales
 
 ### Backend (Symfony)
 
@@ -56,7 +56,7 @@ Demostración técnica integral que muestra arquitectura de desarrollo web moder
 - **CSS moderno** con arquitectura de componentes
 - **Estructura optimizada para SEO**
 
-## 📊 Métricas Técnicas
+## Métricas Técnicas
 
 | Componente | Tecnología    | Líneas de Código | Características                         |
 | ---------- | ------------- | ---------------- | --------------------------------------- |
@@ -65,7 +65,7 @@ Demostración técnica integral que muestra arquitectura de desarrollo web moder
 | Juegos     | Phaser + TS   | ~1500            | 2 juegos educativos, métricas           |
 | Landing    | Astro         | ~800             | SSR, CSS moderno, rendimiento           |
 
-## 🚀 Inicio Rápido
+## Inicio Rápido
 
 ```bash
 # Clonar e instalar
@@ -76,13 +76,13 @@ npm run setup
 # Iniciar todos los servicios (5 apps simultáneamente)
 npm run dev
 Requisitos: Node.js 18+, PHP 8.2+, MySQL
-🔧 Comandos de Desarrollo
+Comandos de Desarrollo
 bashnpm run dev          # Iniciar las 5 aplicaciones
 npm run dev:core     # Solo API + Dashboard + Landing
 npm run build        # Construir todas las aplicaciones frontend
 npm run test         # Ejecutar suites de pruebas
 npm run clean        # Limpiar dependencias y builds
-📈 Datos y Métricas
+Datos y Métricas
 La plataforma procesa datos reales de evaluación de dislexia incluyendo:
 
 Discriminación Visual: puntuaciones y tendencias
@@ -92,14 +92,14 @@ Capacidad de Atención: análisis
 Patrones de uso por dispositivo (Escritorio/Móvil/Tablet)
 
 Dataset Actual: 88 sesiones auténticas de evaluación con análisis de progresión temporal.
-🧠 Características Específicas para Dislexia
+Características Específicas para Dislexia
 
 Seguimiento de habilidades cognitivas alineado con investigación en dislexia
 Visualización de progreso para intervenciones educativas
 Consideraciones de accesibilidad (fuentes OpenDyslexic, alto contraste)
 Métricas basadas en evidencia para evaluación del aprendizaje
 
-🛠️ Stack Tecnológico
+Stack Tecnológico
 Backend
 
 Symfony 6.x (Framework PHP)
@@ -125,18 +125,20 @@ npm Workspaces (Gestión monorepo)
 Concurrently (Orquestación de procesos)
 Git (Control de versiones)
 
-📁 Estructura del Proyecto
+Estructura del Proyecto
 cognitive-playkit/
 ├── apps/
-│   ├── api/              # API REST Symfony
-│   ├── dashboard/        # Dashboard admin Angular
-│   ├── landing/          # Sitio marketing Astro
+│   ├── api/                    # API REST Symfony
+│   ├── dashboard/              # Dashboard admin Angular
+│   ├── landing/                # Sitio marketing Astro
 │   └── games/
-│       ├── letter-detective/  # Juego Phaser.js
-│       └── word-builder/      # Juego Phaser.js
-├── packages/             # Utilidades compartidas
-└── tools/               # Herramientas de desarrollo
-🎯 Construido para Change Dyslexia
+│       ├── letter-detective/   # Juego Phaser.js
+│       └── word-builder/       # Juego Phaser.js
+├── packages/                   # Utilidades compartidas
+├── tools/                      # Herramientas de desarrollo
+├── package.json               # Configuración monorepo
+└── README.md                  # Documentación
+Construido para Change Dyslexia
 Este proyecto demuestra capacidades técnicas relevantes para la misión de Change Dyslexia:
 
 Experiencia en tecnología educativa
@@ -145,10 +147,15 @@ Análisis de aprendizaje basado en datos
 Intervenciones de dislexia respaldadas por investigación
 Arquitectura escalable para plataformas educativas
 
-👨‍💻 Desarrollador
+Desarrollador
 Alberto Guinda - Desarrollador Full-Stack
 Especializado en tecnología educativa y aplicaciones web enfocadas en accesibilidad.
-Portfolio | LinkedIn
+
+Portfolio: albertoguindaportfolio.vercel.app
+LinkedIn: linkedin.com/in/albertoguindasevilla
+GitHub: github.com/albertoguinda
+Email: albertoguindasevilla@gmail.com
+
 
 Este proyecto demuestra prácticas modernas de desarrollo web en el contexto de tecnología educativa e investigación en dislexia.
 ```
